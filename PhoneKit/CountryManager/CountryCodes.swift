@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CountryCodes: NSObject {
+public class CountryCodes: NSObject {
 
-    var name : String?
-    var dial_code : String?
-    var code : String?
+    public var name : String?
+    public var dial_code : String?
+    public var code : String?
     
     
     private var imagePath: String

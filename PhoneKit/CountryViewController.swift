@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CountryViewController: UIViewController,UITextFieldDelegate {
-   typealias SelectedHandler = (CountryCodes)->Void
-    var selectedHandler:SelectedHandler?
+public class CountryViewController: UIViewController,UITextFieldDelegate {
+    public typealias SelectedHandler = (CountryCodes)->Void
+    public var selectedHandler:SelectedHandler?
     @IBOutlet weak var tableViewCountry: UITableView!
-    var countryCode : String?
+    private var countryCode : String?
     var countryObj : CountryCodes?
     var primaryArray: [CountryCodes] = [CountryCodes](){
         didSet{
@@ -21,18 +21,18 @@ class CountryViewController: UIViewController,UITextFieldDelegate {
     }
     var searchArray: [CountryCodes] = [CountryCodes]();
     @IBOutlet weak var txtSearch: UITextField!
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         tableViewCountry.delegate = self
         tableViewCountry.dataSource = self
         getDataFromJSON()
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
         self.view.backgroundColor=UIColor.black.withAlphaComponent(0.4);
     }
-    override func viewWillDisappear(_ animated: Bool) {
+    override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated);
         self.view.backgroundColor=UIColor.clear;
     }
@@ -91,7 +91,7 @@ class CountryViewController: UIViewController,UITextFieldDelegate {
 
 extension CountryViewController: UITableViewDelegate {
    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          let countryObject = self.searchArray[indexPath.row]
          selectedHandler?(countryObject)
          self.dismiss(animated: true, completion: nil)
@@ -101,11 +101,11 @@ extension CountryViewController: UITableViewDelegate {
 }
 
 extension CountryViewController: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.searchArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell") as! CountryTableViewCell
         let countryObject = self.searchArray[indexPath.row]
         cell.countryObj = countryObject

@@ -10,15 +10,15 @@ import UIKit
 import Foundation
 import CoreTelephony
 import SalahUtility
-class CountryListManager: NSObject {
-    enum PhoneNumberType {
+public class CountryListManager: NSObject {
+   public enum PhoneNumberType {
         case pluse
         case zerozero
         case none
 
     }
     var info = CTTelephonyNetworkInfo()
-    var currentCountry:CountryCodes?{
+    public var currentCountry:CountryCodes?{
         if let currentCode:String = self.countryCodeFromSIMCard() ?? self.countryCodeFromCurrentLocale() {
             return self.code(currentCode);
         }
