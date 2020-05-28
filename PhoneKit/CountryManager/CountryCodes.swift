@@ -1,0 +1,48 @@
+//
+//  Country.swift
+//  Concierge
+//
+//  Created by SalahMohammed on 1/20/19.
+//  Copyright © 2019 NewLine. All rights reserved.
+//
+
+import UIKit
+
+class CountryCodes: NSObject {
+
+    var name : String?
+    var dial_code : String?
+    var code : String?
+    
+    
+    private var imagePath: String
+    private var image: UIImage?
+
+    
+    init(name : String , dial_code : String , code: String){
+        self.name = name
+        self.dial_code = dial_code
+        self.code = code
+        imagePath = "CountryListManager.bundle/\(self.code ?? "0")"
+
+    }
+    func localizeName() -> String? {
+        
+        let current = Locale(identifier: "Arab")
+        return current.localizedString(forRegionCode:self.code ?? "")
+    }
+    open var flag: UIImage? {
+        if image != nil {
+            return image
+        }
+        let bundle = Bundle(for: CountryCodes.self)
+        let flagImg = UIImage(named: imagePath, in: bundle, compatibleWith: nil)
+        image = flagImg
+        return image
+    }
+//    static func == (lhs: CountryCodes, rhs: CountryCodes) -> Bool {
+//        return lhs.dial_code == rhs.dial_code
+//       }
+}
+
+

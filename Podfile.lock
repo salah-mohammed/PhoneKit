@@ -1,0 +1,21 @@
+PODS:
+  - SalahUtility (0.0.1)
+
+DEPENDENCIES:
+  - SalahUtility (from `https://github.com/salah-mohammed/SalahUtility.git`)
+
+EXTERNAL SOURCES:
+  SalahUtility:
+    :git: https://github.com/salah-mohammed/SalahUtility.git
+
+CHECKOUT OPTIONS:
+  SalahUtility:
+    :commit: 2a186dc7b4f9fd60ec1a0d2b4f58af4bd60561c4
+    :git: https://github.com/salah-mohammed/SalahUtility.git
+
+SPEC CHECKSUMS:
+  SalahUtility: 43f64c63bb050205af860dc4df23b4a351dbc280
+
+PODFILE CHECKSUM: 062328e59bdb588f4877fb6d9cbc675be7100702
+
+COCOAPODS: 1.9.1
