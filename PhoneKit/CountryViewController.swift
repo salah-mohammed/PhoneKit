@@ -78,6 +78,15 @@ class CountryViewController: UIViewController,UITextFieldDelegate {
         });
         return tempSearchArray;
     }
+        public static func initPicker()->CountryViewController?{
+            FramwWorkConstants.frameWorkBundle = Bundle.framwWorkBundle;
+            if let storyboard:UIStoryboard = UIStoryboard.init(name: "PhoneKit", bundle:Bundle.framwWorkBundle),
+                let vc = storyboard.instantiateViewController(withIdentifier:"CountryViewController") as? CountryViewController{
+
+            return vc;
+        }
+            return nil;
+    }
 }
 
 extension CountryViewController: UITableViewDelegate {
