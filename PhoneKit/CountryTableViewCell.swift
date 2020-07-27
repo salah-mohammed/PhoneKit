@@ -37,7 +37,7 @@ class CountryTableViewCell: UITableViewCell {
             return
         }
         
-        self.imgFlag.image = UIImage(named: self.countryObj?.code ?? "")
+        self.imgFlag.image = self.countryObj?.flag;
         self.lblDailCode.text = self.countryObj?.dial_code
         self.lblName.text = countryName(country: (self.countryObj?.code)!)
 
