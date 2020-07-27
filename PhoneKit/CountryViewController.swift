@@ -27,6 +27,7 @@ public class CountryViewController: UIViewController,UITextFieldDelegate {
         tableViewCountry.delegate = self
         tableViewCountry.dataSource = self
         getDataFromJSON()
+        txtSearch.placeholder = "Search".customLocalize_;
     }
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
@@ -79,7 +80,6 @@ public class CountryViewController: UIViewController,UITextFieldDelegate {
         return tempSearchArray;
     }
         public static func initPicker()->CountryViewController?{
-            FramwWorkConstants.frameWorkBundle = Bundle.framwWorkBundle;
             if let storyboard:UIStoryboard = UIStoryboard.init(name: "PhoneKit", bundle:Bundle(for: CountryViewController.self)),
                 let vc = storyboard.instantiateViewController(withIdentifier:"CountryViewController") as? CountryViewController{
 

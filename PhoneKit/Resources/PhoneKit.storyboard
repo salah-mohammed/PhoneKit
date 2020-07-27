@@ -137,6 +137,9 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </imageView>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="rJn-fK-3ir"/>
+                                                                    </constraints>
                                                                     <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="32" bottom="8" trailing="32"/>
                                                                 </stackView>
                                                             </subviews>

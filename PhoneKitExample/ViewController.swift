@@ -13,7 +13,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblPhoneNumber: UILabel!
 
     var countryViewController:CountryViewController?
-    var countryObject:CountryCodes?
+    
+    @IBOutlet weak var lblCountryName: UILabel!
+    @IBOutlet weak var lblCountryCode: UILabel!
+    @IBOutlet weak var imgFlag: UIImageView!
+    
+    var countryObject:CountryCodes?{
+        didSet{
+            self.lblCountryCode.text = countryObject?.code;
+            self.lblCountryName.text = countryObject?.localizeName();
+            self.imgFlag.image = countryObject?.flag
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,11 +37,11 @@ class ViewController: UIViewController {
         self.countryObject = object;
         }
         self.countryObject=CountryListManager.shared.countryCode("+966")
-        self.present(countryViewController!, animated: true, completion: nil);
     }
 
     @IBAction func btnPhoneNumberPicker(_ sender: Any) {
 
+        self.present(countryViewController!, animated: true, completion: nil);
     }
     
 }

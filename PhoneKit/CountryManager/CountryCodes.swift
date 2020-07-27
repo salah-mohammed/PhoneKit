@@ -26,7 +26,7 @@ public class CountryCodes: NSObject {
         imagePath = "CountryListManager.bundle/\(self.code ?? "0")"
 
     }
-    func localizeName() -> String? {
+    open func localizeName() -> String? {
         
         let current = Locale(identifier: "Arab")
         return current.localizedString(forRegionCode:self.code ?? "")

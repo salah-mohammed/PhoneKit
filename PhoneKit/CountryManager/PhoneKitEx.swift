@@ -9,11 +9,10 @@
 import Foundation
 
 extension Bundle{
-    class var framwWorkBundle:Bundle?{
-        let podBundle = Bundle(for: CountryViewController.self)
-        if let bundleURL:URL = podBundle.url(forResource: "CountryListManager", withExtension: "bundle"){
-        return Bundle(url: bundleURL)
-        }
-        return nil;
+
+}
+extension String{
+    var customLocalize_ : String {
+        return NSLocalizedString(self, tableName: nil, bundle:Bundle(for: CountryViewController.self) ?? Bundle.main, value: "", comment: "")
     }
 }
