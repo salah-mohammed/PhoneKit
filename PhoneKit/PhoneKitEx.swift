@@ -16,3 +16,11 @@ extension String{
         return NSLocalizedString(self, tableName: nil, bundle:Bundle(for: CountryViewController.self) ?? Bundle.main, value: "", comment: "")
     }
 }
+extension UIViewController{
+    public func bs_showMessageWithTitle(title:String,message:String?)
+     {
+         let alert = UIAlertController(title:title, message:message, preferredStyle:UIAlertController.Style.alert)
+         alert.addAction(UIAlertAction(title: "تم", style:UIAlertAction.Style.default, handler: nil))
+         self.present(alert, animated: true, completion: nil)
+     }
+}
