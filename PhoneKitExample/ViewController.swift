@@ -26,6 +26,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblCountryCodeInResult: UILabel!
     /////
     @IBOutlet weak var txtSecondPhoneNumber: UITextField!
+    @IBOutlet weak var lblSecondPhoneNumberWithZero: UILabel!
+    @IBOutlet weak var lblSecondPhoneNumberWithpluse: UILabel!
+    @IBOutlet weak var lblSecondPhoneNumberWithout: UILabel!
+    @IBOutlet weak var lblSecondPhoneNumberOnly: UILabel!
+    @IBOutlet weak var lblSecondCountryCodeInResult: UILabel!
+    @IBOutlet weak var lblSecondCountryName: UILabel!
+    @IBOutlet weak var imgExportFlag: UIImageView!
     
     var countryObject:CountryCode?{
         didSet{
@@ -54,21 +61,29 @@ class ViewController: UIViewController {
         self.present(countryViewController!, animated: true, completion: nil);
     }
     @IBAction func btnExport(_ sender: Any) {
-    
+        if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){
+        self.lblSecondPhoneNumberWithZero.text = CountryListManager.shared.phoneNumber(phoneNumberType: .zerozero, countryCode: countryObject, phoneNumber:phoneNumberItem.1)
+        self.lblSecondPhoneNumberWithpluse.text = CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber:phoneNumberItem.1);
+        self.lblSecondPhoneNumberWithout.text = CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: countryObject, phoneNumber:phoneNumberItem.1);
+        self.lblSecondCountryCodeInResult.text = phoneNumberItem.0?.dial_code;
+        self.lblSecondPhoneNumberOnly.text = phoneNumberItem.1
+        self.lblSecondCountryName.text = phoneNumberItem.0?.localizeName();
+
+        self.imgExportFlag.image = phoneNumberItem.0?.flag;
+
+    }
     }
     @IBAction func btnLogin(_ sender: Any) {
     if CountryListManager.shared.validatePhoneNumber(countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text){
-        self.stackViewResult.isHidden=false;
         self.lblPhoneNumberWithZero.text=CountryListManager.shared.phoneNumber(phoneNumberType: .zerozero, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
         self.lblPhoneNumberWithpluse.text=CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
         self.lblPhoneNumberWithout.text=CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
 
-        let a = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.lblPhoneNumberWithout.text!);
+        let a = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.lblPhoneNumberWithout.text ?? "");
         self.lblCountryCodeInResult.text = a.0?.dial_code;
         self.lblPhoneNumberOnly.text = a.1
     }else{
         self.bs_showMessageWithTitle(title:"خطأ", message:"رقم الهاتف غير صحيح");
-        self.stackViewResult.isHidden=true;
 
     }
     }
