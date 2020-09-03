@@ -20,38 +20,12 @@
 		4EE40BBE247FAC61009243D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EE40BB9247FAC61009243D5 /* Localizable.strings */; };
 		4EE40BBF247FAC61009243D5 /* PhoneKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE40BBC247FAC61009243D5 /* PhoneKit.storyboard */; };
 		4EE40BC0247FAC61009243D5 /* CountryListManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EE40BBD247FAC61009243D5 /* CountryListManager.bundle */; };
-		4EE40BC2247FAE2C009243D5 /* PhoneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF00732366F22000AC6FC1 /* PhoneKit.framework */; };
-		4EE40BC3247FAE2C009243D5 /* PhoneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF00732366F22000AC6FC1 /* PhoneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4EE40BC8247FB142009243D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE40BC7247FB142009243D5 /* Assets.xcassets */; };
 		4EE40BCC247FB567009243D5 /* PhoneKitEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE40BCB247FB567009243D5 /* PhoneKitEx.swift */; };
 		4EE40BCE247FB5B1009243D5 /* FramwWorkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE40BCD247FB5B1009243D5 /* FramwWorkConstants.swift */; };
 		86E81D89339B147887D3E516 /* Pods_PhoneKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A9172C625F730F8C26EC25 /* Pods_PhoneKitExample.framework */; };
 		B8E0ED477655FE154E5BECF5 /* Pods_PhoneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD056835E77D89FE2C50C94 /* Pods_PhoneKit.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4EE40BC4247FAE2C009243D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4ECF006A2366F22000AC6FC1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4ECF00722366F22000AC6FC1;
-			remoteInfo = PhoneKit;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		4EE40BC6247FAE2C009243D5 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				4EE40BC3247FAE2C009243D5 /* PhoneKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1CAF681E9A7DDE38AEEE4CEA /* Pods-PhoneKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneKit.debug.xcconfig"; path = "Target Support Files/Pods-PhoneKit/Pods-PhoneKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EE40BC2247FAE2C009243D5 /* PhoneKit.framework in Frameworks */,
 				86E81D89339B147887D3E516 /* Pods_PhoneKitExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,13 +208,11 @@
 				4ECF007E2366F26400AC6FC1 /* Sources */,
 				4ECF007F2366F26400AC6FC1 /* Frameworks */,
 				4ECF00802366F26400AC6FC1 /* Resources */,
-				4EE40BC6247FAE2C009243D5 /* Embed Frameworks */,
 				000CC1F9DB0D912DA3D7674B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4EE40BC5247FAE2C009243D5 /* PBXTargetDependency */,
 			);
 			name = PhoneKitExample;
 			productName = PhoneKitExample;
@@ -399,14 +370,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4EE40BC5247FAE2C009243D5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4ECF00722366F22000AC6FC1 /* PhoneKit */;
-			targetProxy = 4EE40BC4247FAE2C009243D5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4ECF00882366F26500AC6FC1 /* Main.storyboard */ = {

@@ -125,9 +125,9 @@ Pod::Spec.new do |s|
   # }
     # s.resource_bundle  = "*", "LocationPicker/*"
   # s.resources = 'LocationPicker/Resources/**/*'
-  s.resource_bundles = {
-    'PhoneKit' => ['PhoneKit/Resources/**/*.{xib,xcassets,json,imageset,bundle,strings,storyboard}','PhoneKit/View/*.{lproj,storybard}']
-  }
+  #s.resource_bundles = {
+  #  'PhoneKit' => ['PhoneKit/Resources/**/*.{xib,xcassets,json,imageset,bundle,strings,storyboard}','PhoneKit/View/*.{lproj,storybard}']
+  #}
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 

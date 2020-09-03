@@ -9,7 +9,22 @@
 import UIKit
 import Foundation
 import CoreTelephony
-import SalahUtility
+//import SalahUtility
+extension String {
+    public func bs_replace(target: String, withString: String) -> String {
+        
+        return self.replacingOccurrences(of: target, with:withString, options: .literal, range: nil)
+    }
+    public func bs_arNumberToEn()-> String {
+        let numbersDictionary : Dictionary = ["٠" : "0","١" : "1", "٢" : "2", "٣" : "3", "٤" : "4", "٥" : "5", "٦" : "6", "٧" : "7", "٨" : "8", "٩" : "9"]
+        var str : String = self
+        
+        for (key,value) in numbersDictionary {
+            str =  str.replacingOccurrences(of: key, with: value)
+        }
+        return str
+    }
+}
 public class CountryListManager: NSObject {
    public enum PhoneNumberType {
         case pluse
