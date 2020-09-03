@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1CB26D250116F800967E43 /* MainStorboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1CB26B250116F800967E43 /* MainStorboard.storyboard */; };
 		4ECF00782366F22000AC6FC1 /* PhoneKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECF00762366F22000AC6FC1 /* PhoneKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4ECF00852366F26500AC6FC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF00842366F26500AC6FC1 /* AppDelegate.swift */; };
 		4ECF00872366F26500AC6FC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF00862366F26500AC6FC1 /* ViewController.swift */; };
-		4ECF008A2366F26500AC6FC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF00882366F26500AC6FC1 /* Main.storyboard */; };
 		4ECF008C2366F26700AC6FC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF008B2366F26700AC6FC1 /* Assets.xcassets */; };
 		4ECF008F2366F26700AC6FC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF008D2366F26700AC6FC1 /* LaunchScreen.storyboard */; };
 		4ECF009A2366F33200AC6FC1 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF00952366F33200AC6FC1 /* CountryViewController.swift */; };
@@ -27,19 +27,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E1CB26C250116F800967E43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStorboard.storyboard; sourceTree = "<group>"; };
+		4E1CB26E2501172500967E43 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/MainStorboard.strings; sourceTree = "<group>"; };
 		4ECF00732366F22000AC6FC1 /* PhoneKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhoneKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECF00762366F22000AC6FC1 /* PhoneKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneKit.h; sourceTree = "<group>"; };
 		4ECF00772366F22000AC6FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ECF00822366F26400AC6FC1 /* PhoneKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECF00842366F26500AC6FC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ECF00862366F26500AC6FC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4ECF00892366F26500AC6FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4ECF008B2366F26700AC6FC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4ECF008E2366F26700AC6FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4ECF00902366F26700AC6FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ECF00952366F33200AC6FC1 /* CountryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		4ECF00982366F33200AC6FC1 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
-		4EE40BAB247FA8DE009243D5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		4EE40BAC247FA8DE009243D5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4EE40BB4247FAC13009243D5 /* CountryListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListManager.swift; sourceTree = "<group>"; };
 		4EE40BB5247FAC13009243D5 /* CountryCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			children = (
 				4ECF00842366F26500AC6FC1 /* AppDelegate.swift */,
 				4ECF00862366F26500AC6FC1 /* ViewController.swift */,
-				4ECF00882366F26500AC6FC1 /* Main.storyboard */,
+				4E1CB26B250116F800967E43 /* MainStorboard.storyboard */,
 				4ECF008B2366F26700AC6FC1 /* Assets.xcassets */,
 				4ECF008D2366F26700AC6FC1 /* LaunchScreen.storyboard */,
 				4ECF00902366F26700AC6FC1 /* Info.plist */,
@@ -257,9 +257,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E1CB26D250116F800967E43 /* MainStorboard.storyboard in Resources */,
 				4ECF008F2366F26700AC6FC1 /* LaunchScreen.storyboard in Resources */,
 				4ECF008C2366F26700AC6FC1 /* Assets.xcassets in Resources */,
-				4ECF008A2366F26500AC6FC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,13 +333,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4ECF00882366F26500AC6FC1 /* Main.storyboard */ = {
+		4E1CB26B250116F800967E43 /* MainStorboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4ECF00892366F26500AC6FC1 /* Base */,
-				4EE40BAB247FA8DE009243D5 /* ar */,
+				4E1CB26C250116F800967E43 /* Base */,
+				4E1CB26E2501172500967E43 /* ar */,
 			);
-			name = Main.storyboard;
+			name = MainStorboard.storyboard;
 			sourceTree = "<group>";
 		};
 		4ECF008D2366F26700AC6FC1 /* LaunchScreen.storyboard */ = {
