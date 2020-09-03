@@ -10,7 +10,6 @@ import UIKit
 import PhoneKit
 class ViewController: UIViewController {
     @IBOutlet weak var btnPhoneNumberPicker: UIButton!
-    @IBOutlet weak var lblPhoneNumber: UILabel!
 
     var countryViewController:CountryViewController?
     @IBOutlet weak var stackViewFlagData: UIStackView!
@@ -22,8 +21,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblPhoneNumberWithZero: UILabel!
     @IBOutlet weak var lblPhoneNumberWithpluse: UILabel!
     @IBOutlet weak var lblPhoneNumberWithout: UILabel!
-
     @IBOutlet weak var stackViewResult: UIStackView!
+    @IBOutlet weak var lblPhoneNumberOnly: UILabel!
+    @IBOutlet weak var lblCountryCodeInResult: UILabel!
+    /////
+    @IBOutlet weak var txtSecondPhoneNumber: UITextField!
+    
     var countryObject:CountryCode?{
         didSet{
             self.lblCountryCode.text = countryObject?.code;
@@ -50,6 +53,9 @@ class ViewController: UIViewController {
     @IBAction func btnPhoneNumberPicker(_ sender: Any) {
         self.present(countryViewController!, animated: true, completion: nil);
     }
+    @IBAction func btnExport(_ sender: Any) {
+    
+    }
     @IBAction func btnLogin(_ sender: Any) {
     if CountryListManager.shared.validatePhoneNumber(countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text){
         self.stackViewResult.isHidden=false;
@@ -57,6 +63,9 @@ class ViewController: UIViewController {
         self.lblPhoneNumberWithpluse.text=CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
         self.lblPhoneNumberWithout.text=CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
 
+        let a = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.lblPhoneNumberWithout.text!);
+        self.lblCountryCodeInResult.text = a.0?.dial_code;
+        self.lblPhoneNumberOnly.text = a.1
     }else{
         self.bs_showMessageWithTitle(title:"خطأ", message:"رقم الهاتف غير صحيح");
         self.stackViewResult.isHidden=true;
@@ -67,7 +76,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate {
 func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    if self.txtPhoneNumber == textField {
+    if self.txtPhoneNumber == textField || self.txtSecondPhoneNumber == textField{
         guard let textFieldText = textField.text,
             let rangeOfTextToReplace = Range(range, in: textFieldText) else {
                 return false
