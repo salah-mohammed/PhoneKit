@@ -74,9 +74,9 @@ class ViewController: UIViewController {
     @IBAction func btnIsEqual(_ sender: Any) {
         if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){
             if  CountryListManager.shared.isPhoneNumberEqual(countryCode: phoneNumberItem.0, phoneNumber: phoneNumberItem.1, fullPhoneNumber:"+966597105861"){
-                
+                self.bs_showMessageWithTitle(title:"Equalled Successfully", message:"The phone number that you write equal +966597105861");
             }else{
-                
+                self.bs_showMessageWithTitle(title:"Error,Not Equalled", message:"Error,the phone number that you write not equal +966597105861");
             }
         }
     }
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate {
 func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    if self.txtPhoneNumber == textField || self.txtSecondPhoneNumber == textField{
+    if self.txtPhoneNumber == textField{
         guard let textFieldText = textField.text,
             let rangeOfTextToReplace = Range(range, in: textFieldText) else {
                 return false
