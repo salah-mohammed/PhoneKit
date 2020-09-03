@@ -8,6 +8,16 @@
 
 import UIKit
 import PhoneKit
+
+extension UIViewController{
+    public func bs_showMessageWithTitle(title:String,message:String?)
+     {
+         let alert = UIAlertController(title:title, message:message, preferredStyle:UIAlertController.Style.alert)
+         alert.addAction(UIAlertAction(title: "تم", style:UIAlertAction.Style.default, handler: nil))
+         self.present(alert, animated: true, completion: nil)
+     }
+}
+
 class ViewController: UIViewController {
     @IBOutlet weak var btnPhoneNumberPicker: UIButton!
 
@@ -33,7 +43,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblSecondCountryCodeInResult: UILabel!
     @IBOutlet weak var lblSecondCountryName: UILabel!
     @IBOutlet weak var imgExportFlag: UIImageView!
-    
+    //
+
     var countryObject:CountryCode?{
         didSet{
             self.lblCountryCode.text = countryObject?.code;
@@ -59,6 +70,15 @@ class ViewController: UIViewController {
 
     @IBAction func btnPhoneNumberPicker(_ sender: Any) {
         self.present(countryViewController!, animated: true, completion: nil);
+    }
+    @IBAction func btnIsEqual(_ sender: Any) {
+        if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){
+            if  CountryListManager.shared.isPhoneNumberEqual(countryCode: phoneNumberItem.0, phoneNumber: phoneNumberItem.1, fullPhoneNumber:"+966597105861"){
+                
+            }else{
+                
+            }
+        }
     }
     @IBAction func btnExport(_ sender: Any) {
         if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){

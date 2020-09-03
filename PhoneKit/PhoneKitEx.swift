@@ -12,14 +12,14 @@ extension Bundle{
 
 }
 extension String{
-    var customLocalize_ : String {
+     var customLocalize_ : String {
         return NSLocalizedString(self, tableName: nil, bundle:Bundle(for: CountryViewController.self) ?? Bundle.main, value: "", comment: "")
     }
-    public func bs_replace(target: String, withString: String) -> String {
+     func bs_replace(target: String, withString: String) -> String {
         
         return self.replacingOccurrences(of: target, with:withString, options: .literal, range: nil)
     }
-    public func bs_arNumberToEn()-> String {
+     func bs_arNumberToEn()-> String {
         let numbersDictionary : Dictionary = ["٠" : "0","١" : "1", "٢" : "2", "٣" : "3", "٤" : "4", "٥" : "5", "٦" : "6", "٧" : "7", "٨" : "8", "٩" : "9"]
         var str : String = self
         
@@ -30,7 +30,7 @@ extension String{
     }
 }
 extension UIViewController{
-    public func bs_showMessageWithTitle(title:String,message:String?)
+     func bs_showMessageWithTitle(title:String,message:String?)
      {
          let alert = UIAlertController(title:title, message:message, preferredStyle:UIAlertController.Style.alert)
          alert.addAction(UIAlertAction(title: "تم", style:UIAlertAction.Style.default, handler: nil))
