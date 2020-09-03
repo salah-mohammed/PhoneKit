@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         self.countryViewController?.selectedHandler = { object in
         self.countryObject = object;
         }
-        self.countryObject=CountryListManager.shared.currentCountry
+        self.countryObject=CountryListManager.shared.currentCountry // get current country code
         self.countryObject=CountryListManager.shared.countryCode("+966")
 
     }

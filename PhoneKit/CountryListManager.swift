@@ -9,24 +9,10 @@
 import UIKit
 import Foundation
 import CoreTelephony
-//import SalahUtility
-extension String {
-    public func bs_replace(target: String, withString: String) -> String {
-        
-        return self.replacingOccurrences(of: target, with:withString, options: .literal, range: nil)
-    }
-    public func bs_arNumberToEn()-> String {
-        let numbersDictionary : Dictionary = ["٠" : "0","١" : "1", "٢" : "2", "٣" : "3", "٤" : "4", "٥" : "5", "٦" : "6", "٧" : "7", "٨" : "8", "٩" : "9"]
-        var str : String = self
-        
-        for (key,value) in numbersDictionary {
-            str =  str.replacingOccurrences(of: key, with: value)
-        }
-        return str
-    }
-}
+
 public class CountryListManager: NSObject {
    public static let maximumNumberOfPhoneNumbers:Int=11;
+    
    public enum PhoneNumberType {
         case pluse
         case zerozero
@@ -44,7 +30,7 @@ public class CountryListManager: NSObject {
     override init() {
         super.init()
     }
-     func getDataFromJSON()->[CountryCode]?{
+     public func getDataFromJSON()->[CountryCode]?{
         if let path = Bundle(for: CountryListManager.self).path(forResource: "CountryListManager.bundle/countryCodes", ofType: "json") {
                 let data:Data? = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 if let data:Data=data{
