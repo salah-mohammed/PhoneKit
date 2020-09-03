@@ -26,6 +26,7 @@ extension String {
     }
 }
 public class CountryListManager: NSObject {
+    static let maximumNumberOfPhoneNumbers:Int=11;
    public enum PhoneNumberType {
         case pluse
         case zerozero

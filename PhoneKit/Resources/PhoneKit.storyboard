@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hji-m0-FLB">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hji-m0-FLB">
                                 <rect key="frame" x="0.0" y="373" width="414" height="489"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mYJ-94-Kku">
@@ -42,10 +42,6 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OeK-bz-wVS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkQ-Tt-mKo">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </view>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البحث" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H3o-Xq-ju0">
                                                                         <rect key="frame" x="30" y="0.0" width="354" height="40"/>
                                                                         <constraints>
@@ -57,17 +53,8 @@
                                                                             <action selector="txtTxtSearch:" destination="KxY-xa-GCm" eventType="editingChanged" id="Aw6-up-5ho"/>
                                                                         </connections>
                                                                     </textField>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MB-0Z-Hcr">
-                                                                        <rect key="frame" x="384" y="0.0" width="30" height="40"/>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="30" id="D7I-bm-Fl9"/>
-                                                                        </constraints>
-                                                                    </view>
                                                                 </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="nkQ-Tt-mKo" firstAttribute="width" secondItem="1MB-0Z-Hcr" secondAttribute="width" id="WgQ-wz-4ON"/>
-                                                                </constraints>
+                                                                <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="30" bottom="0.0" trailing="30"/>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
@@ -89,7 +76,7 @@
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qIi-qR-CJG">
                                                 <rect key="frame" x="0.0" y="60" width="414" height="429"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="429" id="8Ht-C8-PRI"/>
                                                 </constraints>
@@ -143,6 +130,7 @@
                                                                     <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="32" bottom="8" trailing="32"/>
                                                                 </stackView>
                                                             </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="5yl-Ql-f9M" secondAttribute="bottom" id="QPL-x3-fUf"/>
                                                                 <constraint firstItem="5yl-Ql-f9M" firstAttribute="top" secondItem="Y8a-ug-t87" secondAttribute="top" id="ZdT-Rb-9P5"/>
@@ -150,6 +138,7 @@
                                                                 <constraint firstItem="5yl-Ql-f9M" firstAttribute="leading" secondItem="Y8a-ug-t87" secondAttribute="leading" id="sXS-uf-nEO"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <outlet property="imgFlag" destination="QpI-EO-CXh" id="vk3-aJ-DrP"/>
                                                             <outlet property="lblDailCode" destination="im4-L8-vjD" id="b5A-32-ihi"/>
@@ -165,12 +154,18 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" name="#ffffff"/>
                                 <constraints>
                                     <constraint firstItem="mYJ-94-Kku" firstAttribute="leading" secondItem="Hji-m0-FLB" secondAttribute="leading" id="CAL-Iu-PX6"/>
                                     <constraint firstAttribute="trailing" secondItem="mYJ-94-Kku" secondAttribute="trailing" id="Pgi-Vu-qKA"/>
                                     <constraint firstItem="mYJ-94-Kku" firstAttribute="top" secondItem="Hji-m0-FLB" secondAttribute="top" id="nzE-U8-foZ"/>
                                     <constraint firstAttribute="bottom" secondItem="mYJ-94-Kku" secondAttribute="bottom" id="z4W-Fq-J4E"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="self.layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpa-1p-axY">
                                 <rect key="frame" x="35" y="328" width="30" height="30"/>
@@ -206,5 +201,8 @@
     </scenes>
     <resources>
         <image name="ic_cancel" width="18" height="18"/>
+        <namedColor name="#ffffff">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

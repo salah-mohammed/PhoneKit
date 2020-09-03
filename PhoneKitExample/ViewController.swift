@@ -13,12 +13,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblPhoneNumber: UILabel!
 
     var countryViewController:CountryViewController?
+    @IBOutlet weak var stackViewFlagData: UIStackView!
+    @IBOutlet weak var stackViewFlagData2: UIStackView!
     
     @IBOutlet weak var lblCountryName: UILabel!
+    @IBOutlet weak var lblCountryName2: UILabel!
+
     @IBOutlet weak var lblCountryCode: UILabel!
+    @IBOutlet weak var lblCountryCode2: UILabel!
+
     @IBOutlet weak var imgFlag: UIImageView!
-    
-    var countryObject:CountryCodes?{
+    @IBOutlet weak var imgFlag2: UIImageView!
+
+    @IBOutlet weak var txtPhoneNumber2: UITextField!
+    var countryObject:CountryCode?{
         didSet{
             self.lblCountryCode.text = countryObject?.code;
             self.lblCountryName.text = countryObject?.localizeName();
@@ -40,9 +48,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnPhoneNumberPicker(_ sender: Any) {
-
         self.present(countryViewController!, animated: true, completion: nil);
     }
     
 }
 
+extension ViewController: UITextFieldDelegate {
+func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    if self.txtPhoneNumber2 == textField {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= CountryListManager.maximumNumberOfPhoneNumbers
+    }
+    return true
+}
+}
