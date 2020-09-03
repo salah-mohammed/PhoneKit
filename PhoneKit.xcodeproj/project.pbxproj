@@ -16,7 +16,7 @@
 		4ECF009A2366F33200AC6FC1 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF00952366F33200AC6FC1 /* CountryViewController.swift */; };
 		4ECF009D2366F33200AC6FC1 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF00982366F33200AC6FC1 /* CountryTableViewCell.swift */; };
 		4EE40BB6247FAC13009243D5 /* CountryListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE40BB4247FAC13009243D5 /* CountryListManager.swift */; };
-		4EE40BB7247FAC13009243D5 /* CountryCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE40BB5247FAC13009243D5 /* CountryCodes.swift */; };
+		4EE40BB7247FAC13009243D5 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE40BB5247FAC13009243D5 /* CountryCode.swift */; };
 		4EE40BBE247FAC61009243D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EE40BB9247FAC61009243D5 /* Localizable.strings */; };
 		4EE40BBF247FAC61009243D5 /* PhoneKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE40BBC247FAC61009243D5 /* PhoneKit.storyboard */; };
 		4EE40BC0247FAC61009243D5 /* CountryListManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EE40BBD247FAC61009243D5 /* CountryListManager.bundle */; };
@@ -42,7 +42,7 @@
 		4EE40BAB247FA8DE009243D5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		4EE40BAC247FA8DE009243D5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4EE40BB4247FAC13009243D5 /* CountryListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListManager.swift; sourceTree = "<group>"; };
-		4EE40BB5247FAC13009243D5 /* CountryCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodes.swift; sourceTree = "<group>"; };
+		4EE40BB5247FAC13009243D5 /* CountryCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
 		4EE40BBA247FAC61009243D5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4EE40BBB247FAC61009243D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4EE40BBC247FAC61009243D5 /* PhoneKit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhoneKit.storyboard; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				4EE40BCD247FB5B1009243D5 /* FramwWorkConstants.swift */,
 				4EE40BCB247FB567009243D5 /* PhoneKitEx.swift */,
 				4EE40BB4247FAC13009243D5 /* CountryListManager.swift */,
-				4EE40BB5247FAC13009243D5 /* CountryCodes.swift */,
+				4EE40BB5247FAC13009243D5 /* CountryCode.swift */,
 			);
 			path = CountryManager;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 				4ECF007E2366F26400AC6FC1 /* Sources */,
 				4ECF007F2366F26400AC6FC1 /* Frameworks */,
 				4ECF00802366F26400AC6FC1 /* Resources */,
-				264C91EC5DEACB88387365AA /* [CP] Embed Pods Frameworks */,
+				FC94741BB78C32A06BC4C51F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,23 +274,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		264C91EC5DEACB88387365AA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6F9722DFEABC5DE91E25ABA2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,6 +296,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FC94741BB78C32A06BC4C51F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -325,7 +325,7 @@
 				4EE40BCE247FB5B1009243D5 /* FramwWorkConstants.swift in Sources */,
 				4ECF009D2366F33200AC6FC1 /* CountryTableViewCell.swift in Sources */,
 				4EE40BCC247FB567009243D5 /* PhoneKitEx.swift in Sources */,
-				4EE40BB7247FAC13009243D5 /* CountryCodes.swift in Sources */,
+				4EE40BB7247FAC13009243D5 /* CountryCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

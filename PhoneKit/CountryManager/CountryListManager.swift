@@ -33,7 +33,7 @@ public class CountryListManager: NSObject {
 
     }
     var info = CTTelephonyNetworkInfo()
-    public var currentCountry:CountryCodes?{
+    public var currentCountry:CountryCode?{
         if let currentCode:String = self.countryCodeFromSIMCard() ?? self.countryCodeFromCurrentLocale() {
             return self.code(currentCode);
         }
@@ -43,20 +43,20 @@ public class CountryListManager: NSObject {
     override init() {
         super.init()
     }
-     func getDataFromJSON()->[CountryCodes]?{
+     func getDataFromJSON()->[CountryCode]?{
         if let path = Bundle(for: CountryListManager.self).path(forResource: "CountryListManager.bundle/countryCodes", ofType: "json") {
                 let data:Data? = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 if let data:Data=data{
                     do {
                     let jsonResult:NSArray? = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? NSArray
-                var countries = [CountryCodes]()
+                var countries = [CountryCode]()
                 for i in jsonResult ?? [] {
                     let obj = i as! [String : Any]
                     let name = obj["name"] as! String
                     let dial_code = obj["dial_code"] as! String
                     let code = obj["code"] as! String
                 
-                countries.append(CountryCodes.init(name: name , dial_code: dial_code , code : code))
+                countries.append(CountryCode.init(name: name , dial_code: dial_code , code : code))
                 }
                   return countries
                 } catch {
@@ -70,7 +70,7 @@ public class CountryListManager: NSObject {
 
   }
  
-    public  func validatePhoneNumber(countryCode:CountryCodes?,phoneNumber:String?)->Bool{
+    public  func validatePhoneNumber(countryCode:CountryCode?,phoneNumber:String?)->Bool{
         if countryCode == nil  || phoneNumber?.count ?? 0 < 7 {
             return false;
         }
@@ -79,14 +79,14 @@ public class CountryListManager: NSObject {
         }
         return true;
     }
-    public  func isPhoneNumberEqual(countryCode:CountryCodes?,phoneNumber:String?,fullPhoneNumber:String)->Bool{
+    public  func isPhoneNumberEqual(countryCode:CountryCode?,phoneNumber:String?,fullPhoneNumber:String)->Bool{
         var temp = CountryListManager.shared.phoneNumber(fullPhoneNumber:fullPhoneNumber)
         if countryCode?.dial_code == temp.0?.dial_code &&  phoneNumber == temp.1{
         return true;
         }
         return false;
     }
-    public  func phoneNumber(phoneNumberType:PhoneNumberType,countryCode:CountryCodes?,phoneNumber:String?)->String{
+    public  func phoneNumber(phoneNumberType:PhoneNumberType,countryCode:CountryCode?,phoneNumber:String?)->String{
         var countryCodeString:String?
         switch phoneNumberType {
             case PhoneNumberType.pluse:
@@ -102,7 +102,7 @@ public class CountryListManager: NSObject {
         
         return  ((countryCodeString ?? "") + (phoneNumber ?? "")).bs_arNumberToEn();
     }
-    public  func phoneNumber(fullPhoneNumber:String)->(CountryCodes?,String?){
+    public  func phoneNumber(fullPhoneNumber:String)->(CountryCode?,String?){
         var tempFullPhoneNumber:String=fullPhoneNumber;
         if tempFullPhoneNumber.hasPrefix("00"){
             tempFullPhoneNumber.removeFirst();
@@ -116,12 +116,12 @@ public class CountryListManager: NSObject {
         }
         tempFullPhoneNumber=tempFullPhoneNumber.bs_arNumberToEn();
        
-        let countryObject:CountryCodes? = self.getDataFromJSON()?.filter({ (countryObject) -> Bool in return tempFullPhoneNumber.contains(countryObject.dial_code ?? "")}).first
+        let countryObject:CountryCode? = self.getDataFromJSON()?.filter({ (countryObject) -> Bool in return tempFullPhoneNumber.contains(countryObject.dial_code ?? "")}).first
             
         return (countryObject,tempFullPhoneNumber.bs_replace(target:countryObject?.dial_code ?? "", withString:""));
     
 }
-    public  func countryCode(_ countryCode:String?)->CountryCodes?{
+    public  func countryCode(_ countryCode:String?)->CountryCode?{
         var tempCountryCode:String=countryCode ?? "";
         if tempCountryCode.hasPrefix("00"){
             tempCountryCode.removeFirst();
@@ -129,12 +129,12 @@ public class CountryListManager: NSObject {
             tempCountryCode = "+\(tempCountryCode)"
         }
         tempCountryCode=tempCountryCode.bs_arNumberToEn();
-        let countryObject:CountryCodes? = self.getDataFromJSON()?.filter({ (countryObject) -> Bool in return tempCountryCode.contains(countryObject.dial_code ?? "")}).first
+        let countryObject:CountryCode? = self.getDataFromJSON()?.filter({ (countryObject) -> Bool in return tempCountryCode.contains(countryObject.dial_code ?? "")}).first
         return countryObject;
     }
-    public  func code(_ code:String?)->CountryCodes?{
+    public  func code(_ code:String?)->CountryCode?{
         if let code:String=code{
-            let countryObject:CountryCodes? = self.getDataFromJSON()?.filter({ (countryObject) -> Bool in return code.uppercased().contains(countryObject.code?.uppercased() ?? "")}).first
+            let countryObject:CountryCode? = self.getDataFromJSON()?.filter({ (countryObject) -> Bool in return code.uppercased().contains(countryObject.code?.uppercased() ?? "")}).first
         return countryObject;
         }
         return nil

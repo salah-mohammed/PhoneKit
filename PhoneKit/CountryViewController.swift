@@ -9,17 +9,17 @@
 import UIKit
 
 public class CountryViewController: UIViewController,UITextFieldDelegate {
-    public typealias SelectedHandler = (CountryCodes)->Void
+    public typealias SelectedHandler = (CountryCode)->Void
     public var selectedHandler:SelectedHandler?
     @IBOutlet weak var tableViewCountry: UITableView!
     private var countryCode : String?
-    var countryObj : CountryCodes?
-    var primaryArray: [CountryCodes] = [CountryCodes](){
+    var countryObj : CountryCode?
+    var primaryArray: [CountryCode] = [CountryCode](){
         didSet{
             self.searchArray = primaryArray;
         }
     }
-    var searchArray: [CountryCodes] = [CountryCodes]();
+    var searchArray: [CountryCode] = [CountryCode]();
     @IBOutlet weak var txtSearch: UITextField!
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ public class CountryViewController: UIViewController,UITextFieldDelegate {
         }
         self.tableViewCountry.reloadData();
     }
-    func search(text:String)->[CountryCodes]{
+    func search(text:String)->[CountryCode]{
        let tempSearchArray = self.primaryArray.filter({ (object) -> Bool in
         return (object.dial_code?.contains(text) ?? false || object.name?.uppercased().contains(text.uppercased()) ?? false || object.localizeName()?.contains(text) ?? false || object.code?.contains(text) ?? false )
         });

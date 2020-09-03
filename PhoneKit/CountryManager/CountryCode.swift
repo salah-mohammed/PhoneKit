@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CountryCodes: NSObject {
+public class CountryCode: NSObject {
 
     public var name : String?
     public var dial_code : String?
@@ -35,7 +35,7 @@ public class CountryCodes: NSObject {
         if image != nil {
             return image
         }
-        let bundle = Bundle(for: CountryCodes.self)
+        let bundle = Bundle(for: CountryCode.self)
         let flagImg = UIImage(named: imagePath, in: bundle, compatibleWith: nil)
         image = flagImg
         return image
