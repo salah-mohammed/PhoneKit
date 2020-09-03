@@ -15,7 +15,7 @@ Navigation Kit used for make threat with screen that have differents navigation 
 # How used (configuration): 
 # Pod install
 ```ruby
-pod 'NavigationKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
+pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
  
 ```
 - First
