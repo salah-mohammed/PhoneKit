@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -98,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				4ECF00762366F22000AC6FC1 /* PhoneKit.h */,
-				4ECF00772366F22000AC6FC1 /* Info.plist */,
 				4EE40BB3247FAC13009243D5 /* CountryManager */,
 				4ECF00982366F33200AC6FC1 /* CountryTableViewCell.swift */,
 				4ECF00952366F33200AC6FC1 /* CountryViewController.swift */,
@@ -134,6 +133,7 @@
 		4EE40BB8247FAC61009243D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4ECF00772366F22000AC6FC1 /* Info.plist */,
 				4EE40BC7247FB142009243D5 /* Assets.xcassets */,
 				4EE40BB9247FAC61009243D5 /* Localizable.strings */,
 				4EE40BBC247FAC61009243D5 /* PhoneKit.storyboard */,
@@ -199,6 +199,7 @@
 				4ECF007E2366F26400AC6FC1 /* Sources */,
 				4ECF007F2366F26400AC6FC1 /* Frameworks */,
 				4ECF00802366F26400AC6FC1 /* Resources */,
+				264C91EC5DEACB88387365AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,6 +274,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		264C91EC5DEACB88387365AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6F9722DFEABC5DE91E25ABA2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,7 +506,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PhoneKit/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PhoneKit/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -516,7 +534,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PhoneKit/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PhoneKit/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -539,7 +557,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
-				INFOPLIST_FILE = PhoneKitExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PhoneKitExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -559,7 +577,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
-				INFOPLIST_FILE = PhoneKitExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PhoneKitExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

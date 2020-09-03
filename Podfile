@@ -15,6 +15,4 @@ target 'PhoneKitExample' do
   use_frameworks!
   pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
 
-  # Pods for PhoneKitExample
-
 end
