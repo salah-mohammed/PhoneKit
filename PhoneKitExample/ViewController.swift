@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnPhoneNumberPicker: UIButton!
 
     var countryViewController:CountryViewController?
+    @IBOutlet weak var btnCustomCountryPicker: UIButton!
     @IBOutlet weak var stackViewFlagData: UIStackView!
     @IBOutlet weak var lblCountryName: UILabel!
     @IBOutlet weak var lblCountryCode: UILabel!
@@ -52,6 +53,7 @@ class ViewController: UIViewController {
             self.imgFlag.image = countryObject?.flag
         }
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,7 +69,11 @@ class ViewController: UIViewController {
         self.countryObject=CountryListManager.shared.countryCode("+966")
 
     }
-
+    @IBAction func btnCustomCountryPicker(_ sender: Any) {
+        if let vc:CustomCountryPickerViewController = self.storyboard?.instantiateViewController(withIdentifier:"CustomCountryPickerViewController") as? CustomCountryPickerViewController{
+            self.navigationController?.pushViewController(vc, animated: true);
+        }
+    }
     @IBAction func btnPhoneNumberPicker(_ sender: Any) {
         self.present(countryViewController!, animated: true, completion: nil);
     }

@@ -1,20 +1,18 @@
 //
-//  CountryTableViewCell.swift
-//  Concierge
+//  CustomCountryPickerTableViewCell.swift
+//  PhoneKitExample
 //
-//  Created by sondos on 1/20/19.
-//  Copyright © 2019 NewLine. All rights reserved.
+//  Created by Salah on 9/4/20.
+//  Copyright © 2020 Salah. All rights reserved.
 //
 
 import UIKit
-
-class CountryTableViewCell: UITableViewCell {
-    
+import PhoneKit
+class CustomCountryPickerTableViewCell: UITableViewCell {
     @IBOutlet weak var imgFlag: UIImageView!
     @IBOutlet weak var lblDailCode: UILabel!
     @IBOutlet weak var lblName: UILabel!
     var countryObj : CountryCode?
-   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,8 +23,6 @@ class CountryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-        
-    
     func configureCell(){
         if self.countryObj == nil {
             return
