@@ -93,10 +93,6 @@ NavigationManager.shared.defaultData = NavigationData.init(NavigationManager.Nav
  ```
 # Configure Successfully
 
-# You can refresh navigation style by 
-```swift
-(self.navigationController as? MainNavigationController)?.refrehNavigationData();
- ```
 # Developer's information to communicate
 
 - salah.mohamed_1995@hotmail.com
