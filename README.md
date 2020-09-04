@@ -37,7 +37,7 @@ if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneN
 
  ```
  
- if you want to set Navigation bar color and set title color for it.
+ PrintPhone number .
  
  ```swift
 
