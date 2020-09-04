@@ -12,6 +12,10 @@ PhoneKit used for make threat with Phone Number that have different prefix (00, 
 * can get current country.
 * Check if two numbers is equalled or not , with prefix 00 or + or without will work succefully.
 
+# Requirements
+* IOS 13+ 
+* Swift 5+
+
 # How used (configuration): 
 # Pod install
 ```ruby
