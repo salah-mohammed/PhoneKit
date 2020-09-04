@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/salah-mohammed/NavigationKit/blob/master/NavigationKitExample/example.gif)
 
-# NavigationKit
+# PhoneKit
 
 Navigation Kit used for make threat with screen that have differents navigation bar style, make change style of bar easy.
 # Advantages
@@ -27,7 +27,7 @@ pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
       }
     self.present(countryViewController!, animated: true, completion: nil);
 ```
-- get country object from string fullPohonenumber
+- Get country object from string fullPohonenumber
 
 ```swift
 
@@ -37,7 +37,7 @@ if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneN
 
  ```
  
-- PrintPhone number 
+- Print Phone number 
 
 First:withZero , Second:withPluse , Thired:Without prefix .
  
@@ -47,7 +47,7 @@ CountryListManager.shared.phoneNumber(phoneNumberType: .zerozero, countryCode: c
 CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
 CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
 ```
-- get all countries to make custom country picker for phone number picker
+- Get all countries to make custom country picker for phone number picker
 
  ```swift
 
