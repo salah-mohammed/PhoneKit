@@ -39,11 +39,7 @@ if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneN
  
 - PrintPhone number 
 
-First:withZerto .
-
-Second:withPluse .
-
-Thired:Without prefix .
+First:withZerto , Second:withPluse , Thired:Without prefix .
  
  ```swift
 
