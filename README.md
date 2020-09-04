@@ -2,15 +2,15 @@
 
 ![alt text](https://github.com/salah-mohammed/NavigationKit/blob/master/NavigationKitExample/example.gif)
 
-# NavigationKit
+# PhoneKit
 
-Navigation Kit used for make threat with screen that have differents navigation bar style, make change style of bar easy.
+PhoneKit used for make threat with Phone Number that have different prefix (00, +, not), make the treatment easier .
 # Advantages
-* set Background Image for navigation bar and title color for every single screen.
-* set color for navigation bar and their title for every single screen.
-* Hide navigation bar feature for every single screen.
-* can make navigation bar color transparent for every single screen.
-* can set default navigation bar style if Viewcontroller not implement NavigationDelegate will take this default style.
+* Contain country picker with dial number.
+* You can make custom country picker.
+* can get country object from phone number .
+* can get current country.
+* Check if two numbers is equalled or not , with prefix 00 or + or without will work succefully.
 
 # How used (configuration): 
 # Pod install
@@ -18,85 +18,44 @@ Navigation Kit used for make threat with screen that have differents navigation 
 pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
  
 ```
-- First
+- If You wan use country picker of libarary 
 
 ```swift
-public class MainNavigationController: NavigationController {
-
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        NavigationManager.shared.navigationController=self;
-        // Do any additional setup after loading the view.
-    }
-    
-}
+        self.countryViewController = CountryViewController.initPicker();
+        self.countryViewController?.selectedHandler = { object in
+        self.countryObject = object;
+      }
+    self.present(countryViewController!, animated: true, completion: nil);
 ```
-- Second
+- Get country object from string fullPohonenumber
 
-if you want set Navigation bar transparent and change title color .
 ```swift
-class FirstViewController: UIViewController,NavigationDelegate {
- 
-    var navigationData:NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.transparent,titleColor:UIColor.black))
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
- }
+
+if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:"+966597105861"){
+
+}
 
  ```
  
- if you want to set Navigation bar color and set title color for it.
+- Print Phone number 
+
+First:withZero , Second:withPluse , Thired:Without prefix .
  
  ```swift
 
-  class SecondViewController: UIViewController,NavigationDelegate {
-  
-  var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
+CountryListManager.shared.phoneNumber(phoneNumberType: .zerozero, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text)
+CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
+CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
 ```
-if you want to hide Navigation bar.
+- Get all countries to make custom country picker for phone number picker
 
  ```swift
- class ThiredViewController: UIViewController,NavigationDelegate {
 
-    var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.hide);
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
- ```
-
-if you want to set background image for Navigation bar and set title color for it.
-
- ```swift
- class ForthViewController: UIViewController,NavigationDelegate {
-
-    var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.backgroundImage(UIImage.init(named:"navigationImage")!), titleColor: UIColor.white))
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
- ```
-- Thired
-
-if you want to set default style 'if Viewcontroller not implement NavigationInfoDelegate'
-```swift
-NavigationManager.shared.defaultData = NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
+self.primaryArray =  CountryListManager.shared.getDataFromJSON() ?? []
 
  ```
 # Configure Successfully
 
-# You can refresh navigation style by 
-```swift
-(self.navigationController as? MainNavigationController)?.refrehNavigationData();
- ```
 # Developer's information to communicate
 
 - salah.mohamed_1995@hotmail.com
