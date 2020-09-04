@@ -29,7 +29,6 @@ pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
 ```
 - get country object from string fullPohonenumber
 
-if you want set Navigation bar transparent and change title color .
 ```swift
 
 if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){
