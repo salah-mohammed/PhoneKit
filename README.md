@@ -31,7 +31,7 @@ pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
 
 ```swift
 
-if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){
+if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:"+966597105861"){
 
 }
 
