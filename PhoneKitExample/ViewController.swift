@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblSecondCountryCodeInResult: UILabel!
     @IBOutlet weak var lblSecondCountryName: UILabel!
     @IBOutlet weak var imgExportFlag: UIImageView!
+    @IBOutlet weak var lblSecondCountryShorcut: UILabel!
     //
 
     var countryObject:CountryCode?{
@@ -66,7 +67,7 @@ class ViewController: UIViewController {
         self.countryObject = object;
         }
         self.countryObject=CountryListManager.shared.currentCountry // get current country code
-        self.countryObject=CountryListManager.shared.countryCode("+966")
+        self.countryObject=CountryListManager.shared.countryCode("+970")
 
     }
     @IBAction func btnCustomCountryPicker(_ sender: Any) {
@@ -79,10 +80,10 @@ class ViewController: UIViewController {
     }
     @IBAction func btnIsEqual(_ sender: Any) {
         if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){
-            if  CountryListManager.shared.isPhoneNumberEqual(countryCode: phoneNumberItem.0, phoneNumber: phoneNumberItem.1, fullPhoneNumber:"+966597105861"){
-                self.bs_showMessageWithTitle(title:"Equalled Successfully", message:"The phone number that you write equal +966597105861");
+            if  CountryListManager.shared.isPhoneNumberEqual(countryCode: phoneNumberItem.0, phoneNumber: phoneNumberItem.1, fullPhoneNumber:"+970597105861"){
+                self.bs_showMessageWithTitle(title:"Equalled Successfully", message:"The phone number that you write equal +970597105861");
             }else{
-                self.bs_showMessageWithTitle(title:"Error,Not Equalled", message:"Error,the phone number that you write not equal +966597105861");
+                self.bs_showMessageWithTitle(title:"Error,Not Equalled", message:"Error,the phone number that you write not equal +970597105861");
             }
         }
     }
@@ -96,7 +97,7 @@ class ViewController: UIViewController {
         self.lblSecondCountryName.text = phoneNumberItem.0?.localizeName();
 
         self.imgExportFlag.image = phoneNumberItem.0?.flag;
-
+        lblSecondCountryShorcut.text=phoneNumberItem.0?.code
     }
     }
     @IBAction func btnLogin(_ sender: Any) {

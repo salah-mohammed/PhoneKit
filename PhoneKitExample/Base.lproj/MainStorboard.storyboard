@@ -93,7 +93,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYL-6r-cGF">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="597105861" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYL-6r-cGF">
                                                                 <rect key="frame" x="128" y="0.0" width="266" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -241,7 +241,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="esf-21-fNY">
-                                                <rect key="frame" x="0.0" y="485" width="414" height="320"/>
+                                                <rect key="frame" x="0.0" y="485" width="414" height="360"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZBo-PX-Z6H">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
@@ -276,7 +276,7 @@
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="20" bottom="0.0" trailing="20"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c0V-bF-YMh">
-                                                        <rect key="frame" x="0.0" y="40" width="414" height="280"/>
+                                                        <rect key="frame" x="0.0" y="40" width="414" height="320"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phZ-8S-3Fv">
                                                                 <rect key="frame" x="16" y="0.0" width="382" height="40"/>
@@ -398,8 +398,28 @@
                                                                     <constraint firstAttribute="height" constant="40" id="Spi-GK-cah"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1v-OW-oNY">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEF-Ym-yBr">
                                                                 <rect key="frame" x="16" y="240" width="382" height="40"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssh-jS-Z2F">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mg-5P-HHx">
+                                                                        <rect key="frame" x="120" y="0.0" width="262" height="40"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="Lxe-Js-1o2"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1v-OW-oNY">
+                                                                <rect key="frame" x="16" y="280" width="382" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ni-r6-V68">
                                                                         <rect key="frame" x="0.0" y="0.0" width="41.5" height="40"/>
@@ -429,7 +449,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcY-VQ-8xj">
-                                                <rect key="frame" x="0.0" y="835" width="414" height="165"/>
+                                                <rect key="frame" x="0.0" y="875" width="414" height="125"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
                                         </subviews>
@@ -475,6 +495,7 @@
                         <outlet property="lblPhoneNumberWithpluse" destination="Xhm-v8-nOP" id="Nfe-KT-hsI"/>
                         <outlet property="lblSecondCountryCodeInResult" destination="CD3-GI-7eT" id="QUM-6Y-STx"/>
                         <outlet property="lblSecondCountryName" destination="igh-Lh-HYt" id="uLP-0l-2Us"/>
+                        <outlet property="lblSecondCountryShorcut" destination="5Mg-5P-HHx" id="ARV-GL-3Mg"/>
                         <outlet property="lblSecondPhoneNumberOnly" destination="p9k-bf-92e" id="DdW-A5-xT0"/>
                         <outlet property="lblSecondPhoneNumberWithZero" destination="Fji-KZ-oLO" id="LdD-6s-prB"/>
                         <outlet property="lblSecondPhoneNumberWithout" destination="pro-jg-5iu" id="A1S-g2-GTg"/>
