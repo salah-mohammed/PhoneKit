@@ -41,14 +41,9 @@ if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneN
  
  ```swift
 
-  class SecondViewController: UIViewController,NavigationDelegate {
-  
-  var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
+CountryListManager.shared.phoneNumber(phoneNumberType: .zerozero, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text)
+CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
+CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
 ```
 if you want to hide Navigation bar.
 
