@@ -47,17 +47,12 @@ CountryListManager.shared.phoneNumber(phoneNumberType: .zerozero, countryCode: c
 CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
 CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text);
 ```
-if you want to hide Navigation bar.
+- get all countries to make custom country picker for phone number picker
 
  ```swift
- class ThiredViewController: UIViewController,NavigationDelegate {
 
-    var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.hide);
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
+self.primaryArray =  CountryListManager.shared.getDataFromJSON() ?? []
+
  ```
 
 if you want to set background image for Navigation bar and set title color for it.
