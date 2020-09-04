@@ -18,18 +18,14 @@ Navigation Kit used for make threat with screen that have differents navigation 
 pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
  
 ```
-- First
+- If You wan use country picker of libarary 
 
 ```swift
-public class MainNavigationController: NavigationController {
-
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        NavigationManager.shared.navigationController=self;
-        // Do any additional setup after loading the view.
-    }
-    
-}
+        self.countryViewController = CountryViewController.initPicker();
+        self.countryViewController?.selectedHandler = { object in
+        self.countryObject = object;
+      }
+    self.present(countryViewController!, animated: true, completion: nil);
 ```
 - Second
 
