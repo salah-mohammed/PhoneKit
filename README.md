@@ -4,7 +4,7 @@
 
 # PhoneKit
 
-PhoneKit used for make threat with Phonenumber that have differents prefix(00,+,non), make the threatment easier .
+PhoneKit used for make threat with Phone Number that have different prefix (00, +, not), make the treatment easier .
 # Advantages
 * Contain country picker with dial number.
 * You can make custom country picker.
