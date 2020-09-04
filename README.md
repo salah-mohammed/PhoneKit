@@ -27,18 +27,14 @@ pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
       }
     self.present(countryViewController!, animated: true, completion: nil);
 ```
-- Second
+- get country object from string fullPohonenumber
 
 if you want set Navigation bar transparent and change title color .
 ```swift
-class FirstViewController: UIViewController,NavigationDelegate {
- 
-    var navigationData:NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.transparent,titleColor:UIColor.black))
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
- }
+
+if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){
+
+}
 
  ```
  
