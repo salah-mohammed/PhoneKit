@@ -1,6 +1,6 @@
 # Result
 
-![alt text](https://github.com/salah-mohammed/NavigationKit/blob/master/NavigationKitExample/example.gif)
+![alt text](https://github.com/salah-mohammed/PhoneKit/blob/master/PhoneKitExample/example.gif)
 
 # PhoneKit
 
@@ -11,6 +11,10 @@ PhoneKit used for make threat with Phone Number that have different prefix (00, 
 * can get country object from phone number .
 * can get current country.
 * Check if two numbers is equalled or not , with prefix 00 or + or without will work succefully.
+
+# Requirements
+* IOS 13+ 
+* Swift 5+
 
 # How used (configuration): 
 # Pod install
@@ -55,6 +59,10 @@ self.primaryArray =  CountryListManager.shared.getDataFromJSON() ?? []
 
  ```
 # Configure Successfully
+
+## License
+
+PhoneKit is released under the MIT license. [See LICENSE](https://github.com/salah-mohammed/PhoneKit/blob/master/LICENSE) for details.
 
 # Developer's information to communicate
 
