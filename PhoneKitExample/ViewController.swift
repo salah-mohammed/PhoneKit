@@ -89,9 +89,9 @@ class ViewController: UIViewController {
     }
     @IBAction func btnExport(_ sender: Any) {
         if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){
-        self.lblSecondPhoneNumberWithZero.text = CountryListManager.shared.phoneNumber(phoneNumberType: .zerozero, countryCode: countryObject, phoneNumber:phoneNumberItem.1)
-        self.lblSecondPhoneNumberWithpluse.text = CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber:phoneNumberItem.1);
-        self.lblSecondPhoneNumberWithout.text = CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: countryObject, phoneNumber:phoneNumberItem.1);
+            self.lblSecondPhoneNumberWithZero.text = CountryListManager.shared.phoneNumber(phoneNumberType: .zerozero, countryCode: phoneNumberItem.0, phoneNumber:phoneNumberItem.1)
+            self.lblSecondPhoneNumberWithpluse.text = CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: phoneNumberItem.0, phoneNumber:phoneNumberItem.1);
+            self.lblSecondPhoneNumberWithout.text = CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: phoneNumberItem.0, phoneNumber:phoneNumberItem.1);
         self.lblSecondCountryCodeInResult.text = phoneNumberItem.0?.dial_code;
         self.lblSecondPhoneNumberOnly.text = phoneNumberItem.1
         self.lblSecondCountryName.text = phoneNumberItem.0?.localizeName();
