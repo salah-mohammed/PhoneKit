@@ -1,6 +1,6 @@
 # Result
 
-![alt text](https://github.com/salah-mohammed/PhoneKit/blob/master/PhoneKitExample/example.gif)
+![alt text](https://github.com/salah-mohammed/PhoneKit/blob/master/PhoneKitExample/example2.gif)
 
 # PhoneKit
 
