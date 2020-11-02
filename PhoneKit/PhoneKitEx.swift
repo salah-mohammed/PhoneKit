@@ -8,9 +8,7 @@
 
 import Foundation
 
-extension Bundle{
 
-}
 extension String{
      var customLocalize_ : String {
         return NSLocalizedString(self, tableName: nil, bundle:Bundle(for: CountryViewController.self) ?? Bundle.main, value: "", comment: "")
