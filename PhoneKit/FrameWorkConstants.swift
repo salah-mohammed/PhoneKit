@@ -8,5 +8,6 @@
 
 import UIKit
 
-class FramwWorkConstants: NSObject {
+class FrameWorkConstants: NSObject {
+    static var frameWorkBundle:Bundle?
 }

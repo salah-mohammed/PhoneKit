@@ -24,7 +24,7 @@
 		4EE40BC0247FAC61009243D5 /* CountryListManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EE40BBD247FAC61009243D5 /* CountryListManager.bundle */; };
 		4EE40BC8247FB142009243D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE40BC7247FB142009243D5 /* Assets.xcassets */; };
 		4EE40BCC247FB567009243D5 /* PhoneKitEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE40BCB247FB567009243D5 /* PhoneKitEx.swift */; };
-		4EE40BCE247FB5B1009243D5 /* FramwWorkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE40BCD247FB5B1009243D5 /* FramwWorkConstants.swift */; };
+		4EE40BCE247FB5B1009243D5 /* FrameWorkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE40BCD247FB5B1009243D5 /* FrameWorkConstants.swift */; };
 		86E81D89339B147887D3E516 /* Pods_PhoneKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A9172C625F730F8C26EC25 /* Pods_PhoneKitExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		4EE40BBD247FAC61009243D5 /* CountryListManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CountryListManager.bundle; sourceTree = "<group>"; };
 		4EE40BC7247FB142009243D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EE40BCB247FB567009243D5 /* PhoneKitEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneKitEx.swift; sourceTree = "<group>"; };
-		4EE40BCD247FB5B1009243D5 /* FramwWorkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FramwWorkConstants.swift; sourceTree = "<group>"; };
+		4EE40BCD247FB5B1009243D5 /* FrameWorkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameWorkConstants.swift; sourceTree = "<group>"; };
 		784CDA01FEA2BDE3160B0E4E /* Pods-PhoneKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneKitExample.release.xcconfig"; path = "Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		DCD8EC0C05A69CEE45956872 /* Pods-PhoneKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneKitExample.debug.xcconfig"; path = "Target Support Files/Pods-PhoneKitExample/Pods-PhoneKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 		E6A9172C625F730F8C26EC25 /* Pods_PhoneKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhoneKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4ECF00762366F22000AC6FC1 /* PhoneKit.h */,
-				4EE40BCD247FB5B1009243D5 /* FramwWorkConstants.swift */,
+				4EE40BCD247FB5B1009243D5 /* FrameWorkConstants.swift */,
 				4EE40BCB247FB567009243D5 /* PhoneKitEx.swift */,
 				4EE40BB4247FAC13009243D5 /* CountryListManager.swift */,
 				4EE40BB5247FAC13009243D5 /* CountryCode.swift */,
@@ -320,7 +320,7 @@
 			files = (
 				4EE40BB6247FAC13009243D5 /* CountryListManager.swift in Sources */,
 				4ECF009A2366F33200AC6FC1 /* CountryViewController.swift in Sources */,
-				4EE40BCE247FB5B1009243D5 /* FramwWorkConstants.swift in Sources */,
+				4EE40BCE247FB5B1009243D5 /* FrameWorkConstants.swift in Sources */,
 				4ECF009D2366F33200AC6FC1 /* CountryTableViewCell.swift in Sources */,
 				4EE40BCC247FB567009243D5 /* PhoneKitEx.swift in Sources */,
 				4EE40BB7247FAC13009243D5 /* CountryCode.swift in Sources */,
