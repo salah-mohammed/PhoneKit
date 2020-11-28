@@ -97,6 +97,9 @@ Pod::Spec.new do |s|
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
+    s.resource_bundles = {
+    'PhoneKit' => ['PhoneKit/Resources/**/*.{xib,xcassets,json,imageset,bundle,strings,storyboard}','PhoneKit/View/*.{lproj,storybard}']
+  }
   #  A list of resources included with the Pod. These are copied into the
   #  target bundle with a build phase script. Anything else will be cleaned.
   #  You can preserve files from being cleaned, please don't preserve
