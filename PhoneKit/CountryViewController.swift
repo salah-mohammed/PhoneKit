@@ -80,7 +80,7 @@ public class CountryViewController: UIViewController,UITextFieldDelegate {
         return tempSearchArray;
     }
         public static func initPicker()->CountryViewController?{
-            FrameWorkConstants.frameWorkBundle = Bundle.framwWorkBundle;
+            FrameWorkConstants.frameWorkBundle = Bundle.module;
             let storyboard:UIStoryboard = UIStoryboard.init(name: "PhoneKit", bundle:FrameWorkConstants.frameWorkBundle)
             if let vc = storyboard.instantiateViewController(withIdentifier:"CountryViewController") as? CountryViewController{
 

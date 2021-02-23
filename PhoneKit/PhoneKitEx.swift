@@ -8,15 +8,24 @@
 
 import Foundation
 
-extension Bundle{
-    class var framwWorkBundle:Bundle?{
-        let podBundle = Bundle(for: CountryViewController.self)
-        if let bundleURL:URL = podBundle.url(forResource: "PhoneKit", withExtension: "bundle"){
-        return Bundle(url: bundleURL)
-        }
-        return nil;
-    }
+//extension Bundle{
+//    class var framwWorkBundle:Bundle?{
+//        let podBundle = Bundle(for: CountryViewController.self)
+//        if let bundleURL:URL = podBundle.url(forResource: "PhoneKit", withExtension: "bundle"){
+//        return Bundle(url: bundleURL)
+//        }
+//        return nil;
+//    }
+//}
+extension Bundle {
+    static var module: Bundle? = {
+        let countriesBundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/PhoneKit.framework/CountryListManager.bundle")
+        //let imagePath = countriesBundle?.path(forResource: "Images/\(countryCode)", ofType: "png")
+        //            imgCountryFlag.image = UIImage(contentsOfFile: imagePath ?? "")
+        return countriesBundle;
+    }()
 }
+
 extension String{
      var customLocalize_ : String {
         return NSLocalizedString(self, tableName: nil, bundle:FrameWorkConstants.frameWorkBundle ?? Bundle.main, value: "", comment: "")
