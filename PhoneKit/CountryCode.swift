@@ -35,7 +35,7 @@ public class CountryCode: NSObject {
         if image != nil {
             return image
         }
-        let flagImg = UIImage(named: imagePath, in: FrameWorkConstants.frameWorkBundle, compatibleWith: nil)
+        let flagImg = UIImage(named: imagePath, in:Bundle.module ?? Bundle.main, compatibleWith: nil)
         image = flagImg
         return image
     }
