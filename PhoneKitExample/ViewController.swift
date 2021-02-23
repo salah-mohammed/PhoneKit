@@ -79,16 +79,15 @@ class ViewController: UIViewController {
         self.present(countryViewController!, animated: true, completion: nil);
     }
     @IBAction func btnIsEqual(_ sender: Any) {
-        if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){
+         let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? "")
             if  CountryListManager.shared.isPhoneNumberEqual(countryCode: phoneNumberItem.0, phoneNumber: phoneNumberItem.1, fullPhoneNumber:"+970597105861"){
                 self.bs_showMessageWithTitle(title:"Equalled Successfully", message:"The phone number that you write equal +970597105861");
             }else{
                 self.bs_showMessageWithTitle(title:"Error,Not Equalled", message:"Error,the phone number that you write not equal +970597105861");
             }
-        }
     }
     @IBAction func btnExport(_ sender: Any) {
-        if let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? ""){
+         let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? "")
             self.lblSecondPhoneNumberWithZero.text = CountryListManager.shared.phoneNumber(phoneNumberType: .zerozero, countryCode: phoneNumberItem.0, phoneNumber:phoneNumberItem.1)
             self.lblSecondPhoneNumberWithpluse.text = CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: phoneNumberItem.0, phoneNumber:phoneNumberItem.1);
             self.lblSecondPhoneNumberWithout.text = CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: phoneNumberItem.0, phoneNumber:phoneNumberItem.1);
@@ -98,7 +97,7 @@ class ViewController: UIViewController {
 
         self.imgExportFlag.image = phoneNumberItem.0?.flag;
         lblSecondCountryShorcut.text=phoneNumberItem.0?.code
-    }
+    
     }
     @IBAction func btnLogin(_ sender: Any) {
     if CountryListManager.shared.validatePhoneNumber(countryCode: countryObject, phoneNumber: self.txtPhoneNumber.text){

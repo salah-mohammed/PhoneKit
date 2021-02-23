@@ -1,5 +1,5 @@
 PODS:
-  - PhoneKit (0.0.2)
+  - PhoneKit (0.0.3)
 
 DEPENDENCIES:
   - PhoneKit (from `https://github.com/salah-mohammed/PhoneKit.git`)
@@ -10,12 +10,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PhoneKit:
-    :commit: 6b2faac8b3b2c0a9404f3bee4db78849ab4a0662
+    :commit: 71231637e3ea21834c90ecc97991f0156c353ffa
     :git: https://github.com/salah-mohammed/PhoneKit.git
 
 SPEC CHECKSUMS:
-  PhoneKit: 56a20fa07b90355b469fadf071f2ed9ae7183e5a
+  PhoneKit: e31587509144a9cd7a7f777de2cf12144e152713
 
 PODFILE CHECKSUM: 09f543f08858d1683014c4fa0e97d7cfac47c110
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

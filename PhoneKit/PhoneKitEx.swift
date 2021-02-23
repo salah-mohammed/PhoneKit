@@ -17,9 +17,10 @@ import Foundation
 //        return nil;
 //    }
 //}
+///CountryListManager.bundle
 extension Bundle {
     static var module: Bundle? = {
-        let countriesBundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/PhoneKit.framework/CountryListManager.bundle")
+        let countriesBundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/PhoneKit.framework")
         //let imagePath = countriesBundle?.path(forResource: "Images/\(countryCode)", ofType: "png")
         //            imgCountryFlag.image = UIImage(contentsOfFile: imagePath ?? "")
         return countriesBundle;
