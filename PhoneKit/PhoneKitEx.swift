@@ -29,7 +29,7 @@ extension Bundle {
 
 extension String{
      var customLocalize_ : String {
-        return NSLocalizedString(self, tableName: nil, bundle:FrameWorkConstants.frameWorkBundle ?? Bundle.main, value: "", comment: "")
+        return NSLocalizedString(self, tableName: nil, bundle:Bundle.module ?? Bundle.main, value: "", comment: "")
     }
      func bs_replace(target: String, withString: String) -> String {
         
