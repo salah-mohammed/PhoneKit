@@ -23,7 +23,7 @@ public class CountryCode: NSObject {
         self.name = name
         self.dial_code = dial_code
         self.code = code
-        imagePath = "CountryListManager.bundle/\(self.code ?? "0")"
+        imagePath = "PhoneKit.bundle/CountryListManager.bundle/\(self.code ?? "0")"
 
     }
     open func localizeName() -> String? {
