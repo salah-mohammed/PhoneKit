@@ -20,10 +20,16 @@ import Foundation
 ///CountryListManager.bundle
 extension Bundle {
     static var module: Bundle? = {
-        let countriesBundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/PhoneKit.framework")
-        //let imagePath = countriesBundle?.path(forResource: "Images/\(countryCode)", ofType: "png")
-        //            imgCountryFlag.image = UIImage(contentsOfFile: imagePath ?? "")
-        return countriesBundle;
+        //firstBundle -> this will used when libarary used in example
+        if let firstBundle:Bundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/PhoneKit.framework"),FileManager.default.fileExists(atPath: firstBundle.bundlePath){
+            return firstBundle;
+        }else
+        //secondBundle -> this will used when libarary used in pods
+        if let secondBundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/PhoneKit.framework/PhoneKit.bundle"),FileManager.default.fileExists(atPath: secondBundle.bundlePath){
+        
+    return secondBundle
+    }
+      return nil
     }()
 }
 
