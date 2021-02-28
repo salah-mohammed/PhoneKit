@@ -31,7 +31,7 @@ public class CountryListManager: NSObject {
         super.init()
     }
      public func getDataFromJSON()->[CountryCode]?{
-        if let path = Bundle.module?.path(forResource: "PhoneKit.bundle/countryCodes", ofType: "json") {
+        if let path = Bundle.module?.path(forResource: "CountryListManager.bundle/countryCodes", ofType: "json") {
                 let data:Data? = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 if let data:Data=data{
                     do {
