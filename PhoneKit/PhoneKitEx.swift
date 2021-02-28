@@ -24,7 +24,7 @@ extension Bundle {
         //firstBundle -> this will used when libarary used in example
         if let firstBundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/PhoneKit.framework/PhoneKit.bundle"),FileManager.default.fileExists(atPath: firstBundle.bundlePath){
         
-    return secondBundle
+    return firstBundle
     }else
         //secondBundle -> this will used when libarary used in pods
 if let secondBundle:Bundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/PhoneKit.framework"),FileManager.default.fileExists(atPath: secondBundle.bundlePath){
