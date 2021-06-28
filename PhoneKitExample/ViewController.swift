@@ -75,8 +75,9 @@ class ViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true);
         }
     }
-    @IBAction func btnPhoneNumberPicker(_ sender: Any) {
-        self.present(countryViewController!, animated: true, completion: nil);
+    @IBAction func btnPhoneNumberPicker(_ sender: UIView) {
+//        self.present(countryViewController!, animated: true, completion: nil);
+        UIAlertController.show(sender, self);
     }
     @IBAction func btnIsEqual(_ sender: Any) {
          let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? "")

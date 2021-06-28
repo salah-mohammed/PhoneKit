@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,13 +93,13 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="im4-L8-vjD">
-                                                                            <rect key="frame" x="32" y="8" width="42" height="96"/>
+                                                                            <rect key="frame" x="32" y="8" width="41.5" height="96"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUy-CN-2jj">
-                                                                            <rect key="frame" x="184.5" y="8" width="37.5" height="96"/>
+                                                                            <rect key="frame" x="184" y="8" width="37.5" height="96"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -179,6 +180,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="EB6-61-Wnl"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Hji-m0-FLB" firstAttribute="leading" secondItem="EB6-61-Wnl" secondAttribute="leading" id="O8Q-hy-zlQ"/>
@@ -187,7 +189,6 @@
                             <constraint firstItem="PgV-ww-zaq" firstAttribute="top" secondItem="Hji-m0-FLB" secondAttribute="bottom" id="giR-rF-CzZ"/>
                             <constraint firstItem="Hji-m0-FLB" firstAttribute="top" secondItem="rpa-1p-axY" secondAttribute="bottom" constant="15" id="wV7-ZU-6ka"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EB6-61-Wnl"/>
                     </view>
                     <connections>
                         <outlet property="tableViewCountry" destination="qIi-qR-CJG" id="fTV-dD-kI6"/>

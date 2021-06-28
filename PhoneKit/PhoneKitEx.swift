@@ -60,3 +60,30 @@ extension UIViewController{
          self.present(alert, animated: true, completion: nil)
      }
 }
+
+extension UIAlertController{
+    
+    public static func show(_ senderView:UIView,_ parentViewController:UIViewController? = UIApplication.shared.windows.first?.rootViewController){
+            let alertController:UIAlertController = UIAlertController.init(title:"\n\n\n\n\n\n\n\n\n\n\n\n", message:"\n\n\n\n\n", preferredStyle: UIAlertController.Style.actionSheet);
+        var customView = AlertView.instanceFromNib();
+        customView.update(alertController);
+        let parent = alertController.view.subviews[0].subviews[0];
+        parent.addSubview(customView)
+        
+        customView.translatesAutoresizingMaskIntoConstraints = false
+
+        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .trailing, relatedBy: .equal, toItem: parent, attribute: .trailing, multiplier: 1, constant: 0))
+        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .leading, relatedBy: .equal, toItem: parent, attribute: .leading, multiplier: 1, constant: 0))
+        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .top, relatedBy: .equal, toItem: parent, attribute: .top, multiplier: 1, constant: 0))
+        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .bottom, relatedBy: .equal, toItem: parent, attribute: .bottom, multiplier: 1, constant: 0))
+        
+        alertController.addAction(UIAlertAction.init(title:"Cancel".customLocalize_, style:.cancel, handler: { (alertAction) in
+            alertController.dismiss(animated: false, completion: nil);
+            }))
+        var popPresenter:UIPopoverPresentationController? = alertController.popoverPresentationController
+        popPresenter?.sourceView = senderView;
+        popPresenter?.sourceRect = senderView.bounds;
+        parentViewController?.present(alertController, animated: true, completion:{
+        });
+        }
+}

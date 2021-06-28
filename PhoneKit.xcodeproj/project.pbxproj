@@ -10,6 +10,10 @@
 		4E1CB26D250116F800967E43 /* MainStorboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1CB26B250116F800967E43 /* MainStorboard.storyboard */; };
 		4E1CB2702501E03900967E43 /* CustomCountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CB26F2501E03900967E43 /* CustomCountryPickerViewController.swift */; };
 		4E1CB2722501E05200967E43 /* CustomCountryPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CB2712501E05200967E43 /* CustomCountryPickerTableViewCell.swift */; };
+		4E9221932689C7DC00163998 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9221922689C7DB00163998 /* AlertView.swift */; };
+		4E9221982689C7FD00163998 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E9221972689C7FD00163998 /* AlertView.xib */; };
+		4E92219C2689CC1F00163998 /* AlertCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E92219B2689CC1F00163998 /* AlertCountryTableViewCell.swift */; };
+		4E9221A02689CC7500163998 /* AlertCountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E92219F2689CC7500163998 /* AlertCountryTableViewCell.xib */; };
 		4ECF00782366F22000AC6FC1 /* PhoneKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECF00762366F22000AC6FC1 /* PhoneKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4ECF00852366F26500AC6FC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF00842366F26500AC6FC1 /* AppDelegate.swift */; };
 		4ECF00872366F26500AC6FC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF00862366F26500AC6FC1 /* ViewController.swift */; };
@@ -33,6 +37,10 @@
 		4E1CB26E2501172500967E43 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/MainStorboard.strings; sourceTree = "<group>"; };
 		4E1CB26F2501E03900967E43 /* CustomCountryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCountryPickerViewController.swift; sourceTree = "<group>"; };
 		4E1CB2712501E05200967E43 /* CustomCountryPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCountryPickerTableViewCell.swift; sourceTree = "<group>"; };
+		4E9221922689C7DB00163998 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		4E9221972689C7FD00163998 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		4E92219B2689CC1F00163998 /* AlertCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCountryTableViewCell.swift; sourceTree = "<group>"; };
+		4E92219F2689CC7500163998 /* AlertCountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertCountryTableViewCell.xib; sourceTree = "<group>"; };
 		4ECF00732366F22000AC6FC1 /* PhoneKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhoneKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECF00762366F22000AC6FC1 /* PhoneKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneKit.h; sourceTree = "<group>"; };
 		4ECF00772366F22000AC6FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +116,9 @@
 				4EE40BB5247FAC13009243D5 /* CountryCode.swift */,
 				4ECF00982366F33200AC6FC1 /* CountryTableViewCell.swift */,
 				4ECF00952366F33200AC6FC1 /* CountryViewController.swift */,
+				4E92219B2689CC1F00163998 /* AlertCountryTableViewCell.swift */,
+				4E92219F2689CC7500163998 /* AlertCountryTableViewCell.xib */,
+				4E9221922689C7DB00163998 /* AlertView.swift */,
 				4EE40BB8247FAC61009243D5 /* Resources */,
 			);
 			path = PhoneKit;
@@ -131,6 +142,7 @@
 		4EE40BB8247FAC61009243D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4E9221972689C7FD00163998 /* AlertView.xib */,
 				4ECF00772366F22000AC6FC1 /* Info.plist */,
 				4EE40BC7247FB142009243D5 /* Assets.xcassets */,
 				4EE40BB9247FAC61009243D5 /* Localizable.strings */,
@@ -253,7 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE40BBF247FAC61009243D5 /* PhoneKit.storyboard in Resources */,
+				4E9221A02689CC7500163998 /* AlertCountryTableViewCell.xib in Resources */,
 				4EE40BBE247FAC61009243D5 /* Localizable.strings in Resources */,
+				4E9221982689C7FD00163998 /* AlertView.xib in Resources */,
 				4EE40BC8247FB142009243D5 /* Assets.xcassets in Resources */,
 				4EE40BC0247FAC61009243D5 /* CountryListManager.bundle in Resources */,
 			);
@@ -319,7 +333,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE40BB6247FAC13009243D5 /* CountryListManager.swift in Sources */,
+				4E92219C2689CC1F00163998 /* AlertCountryTableViewCell.swift in Sources */,
 				4ECF009A2366F33200AC6FC1 /* CountryViewController.swift in Sources */,
+				4E9221932689C7DC00163998 /* AlertView.swift in Sources */,
 				4EE40BCE247FB5B1009243D5 /* FrameWorkConstants.swift in Sources */,
 				4ECF009D2366F33200AC6FC1 /* CountryTableViewCell.swift in Sources */,
 				4EE40BCC247FB567009243D5 /* PhoneKitEx.swift in Sources */,
