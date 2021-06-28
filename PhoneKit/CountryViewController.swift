@@ -9,7 +9,6 @@
 import UIKit
 
 public class CountryViewController: UIViewController,UITextFieldDelegate {
-    public typealias SelectedHandler = (CountryCode)->Void
     public var selectedHandler:SelectedHandler?
     @IBOutlet weak var tableViewCountry: UITableView!
     private var countryCode : String?

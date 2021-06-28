@@ -18,6 +18,9 @@ import Foundation
 //    }
 //}
 ///CountryListManager.bundle
+public typealias SelectedHandler = (CountryCode)->Void
+public typealias CancelHandler = ()->Void
+
 extension Bundle {
     static var module: Bundle? = {
         
@@ -63,7 +66,7 @@ extension UIViewController{
 
 extension UIAlertController{
     
-    public static func show(_ senderView:UIView,_ parentViewController:UIViewController? = UIApplication.shared.windows.first?.rootViewController,selectedHandler:SelectedHandler?){
+    public static func show(_ senderView:UIView,_ parentViewController:UIViewController? = UIApplication.shared.windows.first?.rootViewController,selectedHandler:SelectedHandler?,cancelHandler:CancelHandler?=nil){
             let alertController:UIAlertController = UIAlertController.init(title:"\n\n\n\n\n\n\n\n\n\n\n\n", message:"\n\n\n\n\n", preferredStyle: UIAlertController.Style.actionSheet);
         var customView = AlertView.instanceFromNib();
         customView.update(selectedHandler, alertController);
@@ -78,7 +81,9 @@ extension UIAlertController{
         parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .bottom, relatedBy: .equal, toItem: parent, attribute: .bottom, multiplier: 1, constant: 0))
         
         alertController.addAction(UIAlertAction.init(title:"Cancel".customLocalize_, style:.cancel, handler: { (alertAction) in
-            alertController.dismiss(animated: false, completion: nil);
+            alertController.dismiss(animated: false, completion: {
+                cancelHandler?();
+            });
             }))
         var popPresenter:UIPopoverPresentationController? = alertController.popoverPresentationController
         popPresenter?.sourceView = senderView;

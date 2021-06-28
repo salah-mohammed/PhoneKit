@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 
-public typealias SelectedHandler = (CountryCode)->Void
 
 open class AlertView: UIView {
      @IBOutlet open weak var layoutConstraintHeightOfTableView: NSLayoutConstraint!
