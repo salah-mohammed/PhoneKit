@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PhoneKit:
-    :commit: 2ac97b42eb4e2771032175ee8c31cfe37b84b335
+    :commit: 8aa207bb473af955ed1bf6375f81ed4d9ffb8ac4
     :git: https://github.com/salah-mohammed/PhoneKit.git
 
 SPEC CHECKSUMS:

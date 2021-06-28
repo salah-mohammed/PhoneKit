@@ -48,7 +48,7 @@ open class AlertView: UIView {
     }
     private func configureXib() {
         self.primaryArray = CountryListManager.shared.getDataFromJSON() ?? []
-        self.tableView.register(UINib.init(nibName:"AlertCountryTableViewCell", bundle: nil), forCellReuseIdentifier:"AlertCountryTableViewCell");
+        self.tableView.register(UINib.init(nibName:"AlertCountryTableViewCell", bundle: Bundle.module), forCellReuseIdentifier:"AlertCountryTableViewCell");
         searchBar.backgroundColor=UIColor.clear;
         searchBar.barTintColor=UIColor.clear;
         searchBar.setSearchFieldBackgroundImage(nil, for: .normal);
