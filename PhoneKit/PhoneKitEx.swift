@@ -92,3 +92,11 @@ extension UIAlertController{
         });
         }
 }
+extension Array where Element == CountryCode {
+    func search(text:String)->[CountryCode]{
+       let tempSearchArray = self.filter({ (object) -> Bool in
+        return (object.dial_code?.contains(text) ?? false || object.name?.uppercased().contains(text.uppercased()) ?? false || object.localizeName()?.contains(text) ?? false || object.code?.contains(text) ?? false )
+        });
+        return tempSearchArray;
+    }
+}

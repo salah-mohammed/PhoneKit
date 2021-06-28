@@ -66,15 +66,9 @@ open class AlertView: UIView {
         if self.searchBar.text?.count == 0 {
             self.items = self.primaryArray
         }else{
-            self.items = self.search(text: searchBar.text!);
+            self.items = self.primaryArray.search(text:searchBar.text!);
         }
         self.tableView.reloadData();
-    }
-    func search(text:String)->[CountryCode]{
-       let tempSearchArray = self.primaryArray.filter({ (object) -> Bool in
-        return (object.dial_code?.contains(text) ?? false || object.name?.uppercased().contains(text.uppercased()) ?? false || object.localizeName()?.contains(text) ?? false || object.code?.contains(text) ?? false )
-        });
-        return tempSearchArray;
     }
 }
 extension AlertView:UITableViewDelegate,UITableViewDataSource {

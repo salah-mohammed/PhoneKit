@@ -49,8 +49,16 @@
                                                     <action selector="btnCustomCountryPicker:" destination="AbL-WM-V0q" eventType="touchUpInside" id="Kdu-jD-iFb"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV6-tl-Oes">
+                                                <rect key="frame" x="0.0" y="130" width="414" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="New Picker"/>
+                                                <connections>
+                                                    <action selector="btnNewPhoneNumberPicker:" destination="AbL-WM-V0q" eventType="touchUpInside" id="o5v-m6-kfg"/>
+                                                </connections>
+                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0eu-Mm-VnD">
-                                                <rect key="frame" x="0.0" y="130" width="414" height="325"/>
+                                                <rect key="frame" x="0.0" y="190" width="414" height="325"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fdr-9j-Mce">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
@@ -243,7 +251,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="esf-21-fNY">
-                                                <rect key="frame" x="0.0" y="485" width="414" height="360"/>
+                                                <rect key="frame" x="0.0" y="545" width="414" height="360"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZBo-PX-Z6H">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
@@ -451,7 +459,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcY-VQ-8xj">
-                                                <rect key="frame" x="0.0" y="875" width="414" height="124"/>
+                                                <rect key="frame" x="0.0" y="935" width="414" height="64"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
@@ -485,6 +493,7 @@
                     <connections>
                         <outlet property="btnCustomCountryPicker" destination="qFZ-4K-Fwc" id="0Q2-h5-HmO"/>
                         <outlet property="btnLogin" destination="ba7-1k-lRW" id="uNS-c2-98z"/>
+                        <outlet property="btnNewPhoneNumberPicker" destination="PV6-tl-Oes" id="2e5-Sh-Esv"/>
                         <outlet property="btnPhoneNumberPicker" destination="1R5-rB-fTo" id="2t7-cb-BOa"/>
                         <outlet property="imgExportFlag" destination="3i4-3I-9XO" id="iHN-2X-YOV"/>
                         <outlet property="imgFlag" destination="bOR-LG-aE6" id="baK-DO-GVX"/>

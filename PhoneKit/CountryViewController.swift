@@ -66,19 +66,13 @@ public class CountryViewController: UIViewController,UITextFieldDelegate {
     }
     @IBAction func txtTxtSearch(_ sender: UITextField) {
         if sender.text?.count ?? 0 != 0 {
-        self.searchArray = self.search(text: sender.text!);
+            self.searchArray = self.primaryArray.search(text: sender.text!);
         }else{
         self.searchArray = self.primaryArray;
         }
         self.tableViewCountry.reloadData();
     }
-    func search(text:String)->[CountryCode]{
-       let tempSearchArray = self.primaryArray.filter({ (object) -> Bool in
-        return (object.dial_code?.contains(text) ?? false || object.name?.uppercased().contains(text.uppercased()) ?? false || object.localizeName()?.contains(text) ?? false || object.code?.contains(text) ?? false )
-        });
-        return tempSearchArray;
-    }
-        public static func initPicker()->CountryViewController?{
+    public static func initPicker()->CountryViewController?{
             let storyboard:UIStoryboard = UIStoryboard.init(name: "PhoneKit", bundle:Bundle.module ?? Bundle.main)
             if let vc = storyboard.instantiateViewController(withIdentifier:"CountryViewController") as? CountryViewController{
 

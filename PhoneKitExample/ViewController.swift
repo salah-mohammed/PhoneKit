@@ -20,6 +20,7 @@ extension UIViewController{
 
 class ViewController: UIViewController {
     @IBOutlet weak var btnPhoneNumberPicker: UIButton!
+    @IBOutlet weak var btnNewPhoneNumberPicker: UIButton!
 
     var countryViewController:CountryViewController?
     @IBOutlet weak var btnCustomCountryPicker: UIButton!
@@ -76,7 +77,9 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func btnPhoneNumberPicker(_ sender: UIView) {
-//        self.present(countryViewController!, animated: true, completion: nil);
+        self.present(countryViewController!, animated: true, completion: nil);
+    }
+    @IBAction func btnNewPhoneNumberPicker(_ sender: UIView) {
         UIAlertController.show(sender, self) { (object) in
             self.countryObject = object;
 
