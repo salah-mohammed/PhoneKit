@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 
+public typealias SelectedHandler = (CountryCode)->Void
+
 open class AlertView: UIView {
      @IBOutlet open weak var layoutConstraintHeightOfTableView: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
@@ -18,6 +20,7 @@ open class AlertView: UIView {
     var alertController:UIAlertController?
     var items:[CountryCode]=[CountryCode]();
     var primaryArray:[CountryCode]=[CountryCode]();
+    var selectedHandler:SelectedHandler?
     open override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -29,9 +32,9 @@ open class AlertView: UIView {
         super.init(frame: frame)
 //        configureXib()
     }
-    func update( _ alertController:UIAlertController?){
+    func update(_ selectedHandler:SelectedHandler?,_ alertController:UIAlertController?){
+        self.selectedHandler=selectedHandler;
         self.alertController=alertController;
-
         search();
     }
 
@@ -86,16 +89,12 @@ extension AlertView:UITableViewDelegate,UITableViewDataSource {
         var object = items[indexPath.row];
         cell.countryObj=object;
         cell.configureCell()
-//        cell.textLabel?.text=object.localizeName() ?? "";
-//        cell.textLabel?.textAlignment = .center;
-//        cell.textLabel?.textColor=UIColor.systemBlue;
-//        cell.textLabel?.font=UIFont.systemFont(ofSize: 19, weight: .regular);
         return cell;
     }
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var object = items[indexPath.row];
         self.alertController?.dismiss(animated: true, completion: {
-//            self.selectedHandler?(object);
+            self.selectedHandler?(object);
         });
     }
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
