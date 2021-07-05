@@ -80,10 +80,10 @@ class ViewController: UIViewController {
         self.present(countryViewController!, animated: true, completion: nil);
     }
     @IBAction func btnNewPhoneNumberPicker(_ sender: UIView) {
-        UIAlertController.show(sender, self) { (object) in
-            self.countryObject = object;
-        } cancelHandler: {
-        }
+//        UIAlertController.showCountryPicker(sender, self) { (object) in
+//            self.countryObject = object;
+//        } cancelHandler: {
+//        }
 
     }
     @IBAction func btnIsEqual(_ sender: Any) {
