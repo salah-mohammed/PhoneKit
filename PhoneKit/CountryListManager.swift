@@ -105,7 +105,11 @@ public class CountryListManager: NSObject {
        
         let countryObject:CountryCode? = self.getDataFromJSON()?.filter({ (countryObject) -> Bool in return tempFullPhoneNumber.contains(countryObject.dial_code ?? "")}).first
             
-        return (countryObject,tempFullPhoneNumber.bs_replace(target:countryObject?.dial_code ?? "", withString:""));
+        var phoneNumber = tempFullPhoneNumber.bs_replace(target:countryObject?.dial_code ?? "", withString:"")
+        if phoneNumber.hasPrefix("+"){
+            phoneNumber.removeFirst();
+        }
+        return (countryObject,phoneNumber);
     
 }
     public  func countryCode(_ countryCode:String?)->CountryCode?{
