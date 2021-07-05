@@ -82,8 +82,9 @@ class ViewController: UIViewController {
     @IBAction func btnNewPhoneNumberPicker(_ sender: UIView) {
         UIAlertController.show(sender, self) { (object) in
             self.countryObject = object;
-
+        } cancelHandler: {
         }
+
     }
     @IBAction func btnIsEqual(_ sender: Any) {
          let phoneNumberItem:(CountryCode?,String?) = CountryListManager.shared.phoneNumber(fullPhoneNumber:self.txtSecondPhoneNumber.text ?? "")

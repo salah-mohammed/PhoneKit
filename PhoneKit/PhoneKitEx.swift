@@ -66,7 +66,7 @@ extension UIViewController{
 
 extension UIAlertController{
     
-    public static func show(_ senderView:UIView,_ parentViewController:UIViewController? = UIApplication.shared.windows.first?.rootViewController,selectedHandler:SelectedHandler?,cancelHandler:CancelHandler?=nil){
+    public static func showCountryPicker(_ senderView:UIView,_ parentViewController:UIViewController? = UIApplication.shared.windows.first?.rootViewController,selectedHandler:SelectedHandler?,cancelHandler:CancelHandler?=nil){
             let alertController:UIAlertController = UIAlertController.init(title:"\n\n\n\n\n\n\n\n\n\n\n\n", message:"\n\n\n\n\n", preferredStyle: UIAlertController.Style.actionSheet);
         var customView = AlertView.instanceFromNib();
         customView.update(selectedHandler, alertController);
