@@ -145,7 +145,6 @@
 				4ECF00982366F33200AC6FC1 /* CountryTableViewCell.swift */,
 				4ECF00952366F33200AC6FC1 /* CountryViewController.swift */,
 				4E92219B2689CC1F00163998 /* AlertCountryTableViewCell.swift */,
-				4E92219F2689CC7500163998 /* AlertCountryTableViewCell.xib */,
 				4E9221922689C7DB00163998 /* AlertView.swift */,
 				4EE40BB8247FAC61009243D5 /* Resources */,
 			);
@@ -170,6 +169,7 @@
 		4EE40BB8247FAC61009243D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4E92219F2689CC7500163998 /* AlertCountryTableViewCell.xib */,
 				4E9221972689C7FD00163998 /* AlertView.xib */,
 				4ECF00772366F22000AC6FC1 /* Info.plist */,
 				4EE40BC7247FB142009243D5 /* Assets.xcassets */,
