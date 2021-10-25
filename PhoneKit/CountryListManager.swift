@@ -22,7 +22,7 @@ public class CountryListManager: NSObject {
     var info = CTTelephonyNetworkInfo()
     public var currentCountry:CountryCode?{
         if let currentCode:String = self.countryCodeFromSIMCard() ?? self.countryCodeFromCurrentLocale() {
-            return self.code(currentCode);
+            return self.countryCode(code:currentCode);
         }
         return nil
     }
@@ -112,18 +112,35 @@ public class CountryListManager: NSObject {
         return (countryObject,phoneNumber);
     
 }
-    public  func countryCode(_ countryCode:String?)->CountryCode?{
-        var tempCountryCode:String=countryCode ?? "";
+    // for example:+966,00966,966
+    // for example:AF,US,UK
+    public  func countryCode(_ value:String?)->CountryCode?{
+        if let value:String=value{
+            if value.bs_containsLetters{
+                return self.countryCode(code: value);
+            }else{
+                return self.countryCode(dialCode: value);
+            }
+        }
+   
+        return nil
+    }
+    // for example:+966,00966,966
+    public  func countryCode(dialCode:String?)->CountryCode?{
+        var tempCountryCode:String=dialCode ?? "";
         if tempCountryCode.hasPrefix("00"){
             tempCountryCode.removeFirst();
             tempCountryCode.removeFirst();
+            tempCountryCode = "+\(tempCountryCode)"
+        }else if !tempCountryCode.hasPrefix("+"){
             tempCountryCode = "+\(tempCountryCode)"
         }
         tempCountryCode=tempCountryCode.bs_arNumberToEn();
         let countryObject:CountryCode? = self.getDataFromJSON()?.filter({ (countryObject) -> Bool in return tempCountryCode.contains(countryObject.dial_code ?? "")}).first
         return countryObject;
     }
-    public  func code(_ code:String?)->CountryCode?{
+    // for example:AF,US,UK
+    public  func countryCode(code:String?)->CountryCode?{
         if let code:String=code{
             let countryObject:CountryCode? = self.getDataFromJSON()?.filter({ (countryObject) -> Bool in return code.uppercased().contains(countryObject.code?.uppercased() ?? "")}).first
         return countryObject;

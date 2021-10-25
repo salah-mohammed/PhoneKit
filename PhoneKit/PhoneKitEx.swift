@@ -38,6 +38,13 @@ if let secondBundle:Bundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/
 }
 
 extension String{
+    var  bs_containsLetters:Bool{
+        if self.rangeOfCharacter(from:CharacterSet.letters) != nil{
+         return true
+        }
+        return false;
+    }
+    
      var customLocalize_ : String {
         return NSLocalizedString(self, tableName: nil, bundle:Bundle.module ?? Bundle.main, value: "", comment: "")
     }
@@ -100,3 +107,4 @@ extension UIAlertController{
         return tempSearchArray;
     }
 }
+
