@@ -126,7 +126,7 @@ public class CountryListManager: NSObject {
         return nil
     }
     // for example:+966,00966,966
-    public  func countryCode(dialCode:String?)->CountryCode?{
+    private  func countryCode(dialCode:String?)->CountryCode?{
         var tempCountryCode:String=dialCode ?? "";
         if tempCountryCode.hasPrefix("00"){
             tempCountryCode.removeFirst();
@@ -140,7 +140,7 @@ public class CountryListManager: NSObject {
         return countryObject;
     }
     // for example:AF,US,UK
-    public  func countryCode(code:String?)->CountryCode?{
+    private  func countryCode(code:String?)->CountryCode?{
         if let code:String=code{
             let countryObject:CountryCode? = self.getDataFromJSON()?.filter({ (countryObject) -> Bool in return code.uppercased().contains(countryObject.code?.uppercased() ?? "")}).first
         return countryObject;

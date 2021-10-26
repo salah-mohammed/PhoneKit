@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         self.countryObject = object;
         }
         self.countryObject=CountryListManager.shared.currentCountry // get current country code
-        self.countryObject=CountryListManager.shared.countryCode("+970")
+        self.countryObject=CountryListManager.shared.countryCode("SA")
 
     }
     @IBAction func btnCustomCountryPicker(_ sender: Any) {
