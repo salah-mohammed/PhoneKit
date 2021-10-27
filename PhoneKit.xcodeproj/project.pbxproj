@@ -62,6 +62,7 @@
 		4E1CB26E2501172500967E43 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/MainStorboard.strings; sourceTree = "<group>"; };
 		4E1CB26F2501E03900967E43 /* CustomCountryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCountryPickerViewController.swift; sourceTree = "<group>"; };
 		4E1CB2712501E05200967E43 /* CustomCountryPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCountryPickerTableViewCell.swift; sourceTree = "<group>"; };
+		4E8ED259272985C600E69386 /* SVGCountryFlags.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SVGCountryFlags.zip; sourceTree = SOURCE_ROOT; };
 		4E9221922689C7DB00163998 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		4E9221972689C7FD00163998 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		4E92219B2689CC1F00163998 /* AlertCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 				4EE40BC7247FB142009243D5 /* Assets.xcassets */,
 				4EE40BB9247FAC61009243D5 /* Localizable.strings */,
 				4EE40BBC247FAC61009243D5 /* PhoneKit.storyboard */,
+				4E8ED259272985C600E69386 /* SVGCountryFlags.zip */,
 				4EE40BBD247FAC61009243D5 /* CountryListManager.bundle */,
 			);
 			path = Resources;
