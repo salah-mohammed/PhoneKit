@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnPhoneNumberPicker: UIButton!
     @IBOutlet weak var btnNewPhoneNumberPicker: UIButton!
 
-    var countryViewController:CountryViewController?
+//    var countryViewController:CountryViewController?
     @IBOutlet weak var btnCustomCountryPicker: UIButton!
     @IBOutlet weak var stackViewFlagData: UIStackView!
     @IBOutlet weak var lblCountryName: UILabel!
@@ -63,10 +63,10 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        self.countryViewController = CountryViewController.initPicker();
-        self.countryViewController?.selectedHandler = { object in
-        self.countryObject = object;
-        }
+//        self.countryViewController = CountryViewController.initPicker();
+//        self.countryViewController?.selectedHandler = { object in
+//        self.countryObject = object;
+//        }
         self.countryObject=CountryListManager.shared.currentCountry // get current country code
         self.countryObject=CountryListManager.shared.countryCode("SA")
 
@@ -77,7 +77,12 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func btnPhoneNumberPicker(_ sender: UIView) {
-        self.present(countryViewController!, animated: true, completion: nil);
+//        self.present(countryViewController!, animated: true, completion: nil);
+        
+        UIAlertController.showCountryPicker(sender, self) { (object) in
+            self.countryObject = object;
+        } cancelHandler: {
+        }
     }
     @IBAction func btnNewPhoneNumberPicker(_ sender: UIView) {
         UIAlertController.showCountryPicker(sender, self) { (object) in
