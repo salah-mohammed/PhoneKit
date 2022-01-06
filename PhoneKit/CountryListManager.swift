@@ -72,8 +72,12 @@ public class CountryListManager: NSObject {
         }
         return true;
     }
+    public  func isPhoneNumberEqual(firstFullPhoneNumber:String,secondFullPhoneNumber:String)->Bool{
+        let firstPhoneNumber = self.phoneNumber(fullPhoneNumber: firstFullPhoneNumber);
+        return self.isPhoneNumberEqual(countryCode: firstPhoneNumber.0, phoneNumber: firstPhoneNumber.1, fullPhoneNumber:secondFullPhoneNumber);
+    }
     public  func isPhoneNumberEqual(countryCode:CountryCode?,phoneNumber:String?,fullPhoneNumber:String)->Bool{
-        var temp = CountryListManager.shared.phoneNumber(fullPhoneNumber:fullPhoneNumber)
+        let temp = CountryListManager.shared.phoneNumber(fullPhoneNumber:fullPhoneNumber)
         if countryCode?.dial_code == temp.0?.dial_code &&  phoneNumber == temp.1{
         return true;
         }
