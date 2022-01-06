@@ -8,6 +8,9 @@
 
 import UIKit
 
+// compare tow full number
+// validate full number
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

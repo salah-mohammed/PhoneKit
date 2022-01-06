@@ -56,7 +56,13 @@ public class CountryListManager: NSObject {
         return nil
 
   }
- 
+    public  func validatePhoneNumber(fullPhoneNumber:String?)->Bool{
+        if let fullPhoneNumber:String = fullPhoneNumber{
+        let item = self.phoneNumber(fullPhoneNumber:fullPhoneNumber);
+        return self.validatePhoneNumber(countryCode: item.0, phoneNumber: item.1);
+        }
+        return false;
+    }
     public  func validatePhoneNumber(countryCode:CountryCode?,phoneNumber:String?)->Bool{
         if countryCode == nil  || phoneNumber?.count ?? 0 < 7 {
             return false;
