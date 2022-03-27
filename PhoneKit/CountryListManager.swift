@@ -78,12 +78,15 @@ public class CountryListManager: NSObject {
     }
     public  func isPhoneNumberEqual(countryCode:CountryCode?,phoneNumber:String?,fullPhoneNumber:String)->Bool{
         let temp = CountryListManager.shared.phoneNumber(fullPhoneNumber:fullPhoneNumber)
-        if countryCode?.dial_code == temp.0?.dial_code &&  phoneNumber == temp.1{
-        return true;
+        if let countryCode:CountryCode=countryCode,(temp.0 != nil && temp.1 != nil){
+            if countryCode.dial_code == temp.0?.dial_code &&  phoneNumber == temp.1{
+            return true;
+            }
         }
         return false;
     }
-    public  func phoneNumber(phoneNumberType:PhoneNumberType,countryCode:CountryCode?,phoneNumber:String?)->String{
+    public  func phoneNumber(phoneNumberType:PhoneNumberType,countryCode:CountryCode?,phoneNumber:String?)->String?{
+        if self.validatePhoneNumber(countryCode: countryCode, phoneNumber: phoneNumber){
         var countryCodeString:String?
         switch phoneNumberType {
             case PhoneNumberType.pluse:
@@ -98,8 +101,12 @@ public class CountryListManager: NSObject {
         }
         
         return  ((countryCodeString ?? "") + (phoneNumber ?? "")).bs_arNumberToEn();
+        }else{
+          return nil
+        }
     }
-    public  func phoneNumber(fullPhoneNumber:String)->(CountryCode?,String?){
+    public  func phoneNumber(fullPhoneNumber:String?)->(CountryCode?,String?){
+        if let fullPhoneNumber:String=fullPhoneNumber{
         var tempFullPhoneNumber:String=fullPhoneNumber;
         if tempFullPhoneNumber.hasPrefix("00"){
             tempFullPhoneNumber.removeFirst();
@@ -119,7 +126,11 @@ public class CountryListManager: NSObject {
         if phoneNumber.hasPrefix("+"){
             phoneNumber.removeFirst();
         }
+        if validatePhoneNumber(countryCode: countryObject, phoneNumber: phoneNumber){
         return (countryObject,phoneNumber);
+        }
+        }
+        return (nil,nil)
     
 }
     // for example:+966,00966,966
