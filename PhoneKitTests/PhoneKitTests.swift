@@ -33,6 +33,8 @@ class PhoneKitTests: XCTestCase {
         printPhoneNumber();
         isPhoneNumberEqualForStrings();
         countryCode();
+        phoneNumberExport();
+        currentCountryCode();
     }
 
     func testPerformanceExample() throws {
@@ -129,5 +131,31 @@ class PhoneKitTests: XCTestCase {
         let value4 = CountryListManager.shared.isPhoneNumberEqual(countryCode: countryCode, phoneNumber:self.phoneNumber, fullPhoneNumber:"+97059");
         XCTAssertEqual(value4, false)
 
+    }
+    // func phoneNumber(fullPhoneNumber:String?)->(CountryCode?,String?)
+    func phoneNumberExport(){
+        // success
+        let object1 = CountryListManager.shared.phoneNumber(fullPhoneNumber:"00970\(self.phoneNumber)")
+        XCTAssertNotNil(object1.0)
+        XCTAssertNotNil(object1.1)
+        let object2 = CountryListManager.shared.phoneNumber(fullPhoneNumber:"+970\(self.phoneNumber)")
+        XCTAssertNotNil(object2.0)
+        XCTAssertNotNil(object2.1)
+        let object3 = CountryListManager.shared.phoneNumber(fullPhoneNumber:"970\(self.phoneNumber)")
+        XCTAssertNotNil(object3.0)
+        XCTAssertNotNil(object3.1)
+        let object4 = CountryListManager.shared.phoneNumber(fullPhoneNumber:"970\(self.errorPhoneNumber)")
+        XCTAssertNotNil(object4.0)
+        XCTAssertNotNil(object4.1)
+        // fail
+        let object5 = CountryListManager.shared.phoneNumber(fullPhoneNumber:"97059710")
+        XCTAssertNil(object5.0)
+        XCTAssertNil(object5.1)
+        let object6 = CountryListManager.shared.phoneNumber(fullPhoneNumber:"970597k0")
+        XCTAssertNil(object6.0)
+        XCTAssertNil(object6.1)
+    }
+    func currentCountryCode(){
+        XCTAssertNotNil(CountryListManager.shared.currentCountry)
     }
 }
