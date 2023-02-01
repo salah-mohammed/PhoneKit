@@ -109,3 +109,14 @@ extension UIAlertController{
     }
 }
 
+ enum AppRegularExpression:String{
+    case phone = "[+]+[0-9 ]{1,}|[00]+[0-9 ]{1,}|[0-9 ]{9,}"
+    case empty="^[. ]*$"
+    case isNumberOnly="^[0-9]"
+    public var regex:AppRegex{
+        return AppRegex.init(self.rawValue);
+    }
+    public func  matches(_ input:String)->Bool{
+    return self.regex.matches(input:input)
+    }
+}

@@ -64,7 +64,7 @@ public class CountryListManager: NSObject {
         return false;
     }
     public  func validatePhoneNumber(countryCode:CountryCode?,phoneNumber:String?)->Bool{
-        if countryCode == nil  || phoneNumber?.count ?? 0 < 7 {
+        if countryCode == nil  || phoneNumber?.count ?? 0 < 7 || (AppRegularExpression.isNumberOnly.regex.matches(input:phoneNumber ?? "") == false) {
             return false;
         }
         if ((countryCode?.dial_code ?? "") + (phoneNumber ?? "")).count >= 15 {

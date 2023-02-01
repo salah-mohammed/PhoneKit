@@ -68,7 +68,12 @@ class PhoneKitTests: XCTestCase {
         XCTAssertEqual(value4, false)
         let value5 = CountryListManager.shared.validatePhoneNumber(countryCode: countryObject, phoneNumber:"123");
         XCTAssertEqual(value5, false)
+        let value6 = CountryListManager.shared.validatePhoneNumber(countryCode: countryObject, phoneNumber:"972597105861");
+        XCTAssertEqual(value6, false)
+        let value7 = CountryListManager.shared.validatePhoneNumber(countryCode: nil, phoneNumber:"972597105861");
+        XCTAssertEqual(value7, false)
     }
+    // there is error
     /// public  func phoneNumber(phoneNumberType:PhoneNumberType,countryCode:CountryCode?,phoneNumber:String?)->String
     func printPhoneNumber(){
         // success
@@ -78,7 +83,8 @@ class PhoneKitTests: XCTestCase {
         XCTAssertEqual(value2, true)
         let value3 = CountryListManager.shared.phoneNumber(phoneNumberType: .zerozero, countryCode: countryObject, phoneNumber: phoneNumber) == "00970\(phoneNumber)";
         XCTAssertEqual(value3, true)
-        
+        let value4 = CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber:phoneNumber)
+        XCTAssertNotNil(value4)
         // fail
         let object1 = CountryListManager.shared.phoneNumber(phoneNumberType: .none, countryCode: countryObject, phoneNumber: nil)
         XCTAssertNil(object1)
@@ -92,6 +98,14 @@ class PhoneKitTests: XCTestCase {
         XCTAssertNil(object5)
         let object6 = CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber: "123123211232132")
         XCTAssertNil(object6)
+        let object7 = CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: nil, phoneNumber:"+970\(phoneNumber)")
+        XCTAssertNil(object7)
+        let object8 = CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber:"+970\(phoneNumber)")
+        XCTAssertNil(object8)
+        let object9 = CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: countryObject, phoneNumber:"+\(phoneNumber)")
+        XCTAssertNil(object9)
+        let object10 = CountryListManager.shared.phoneNumber(phoneNumberType: .pluse, countryCode: nil, phoneNumber:"970\(phoneNumber)")
+        XCTAssertNil(object10)
     }
     ///    func isPhoneNumberEqual(firstFullPhoneNumber:String,secondFullPhoneNumber:String)->Bool{
     func isPhoneNumberEqualForStrings(){

@@ -33,6 +33,7 @@
 		4EE40BC8247FB142009243D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE40BC7247FB142009243D5 /* Assets.xcassets */; };
 		4EE40BCC247FB567009243D5 /* PhoneKitEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE40BCB247FB567009243D5 /* PhoneKitEx.swift */; };
 		4EE40BCE247FB5B1009243D5 /* FrameWorkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE40BCD247FB5B1009243D5 /* FrameWorkConstants.swift */; };
+		8B0DB8C6298A7A79003AD57C /* AppRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DB8C5298A7A79003AD57C /* AppRegex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		4EE40BC7247FB142009243D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EE40BCB247FB567009243D5 /* PhoneKitEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneKitEx.swift; sourceTree = "<group>"; };
 		4EE40BCD247FB5B1009243D5 /* FrameWorkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameWorkConstants.swift; sourceTree = "<group>"; };
+		8B0DB8C5298A7A79003AD57C /* AppRegex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRegex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				4E92219B2689CC1F00163998 /* AlertCountryTableViewCell.swift */,
 				4E9221922689C7DB00163998 /* AlertView.swift */,
 				4EE40BB8247FAC61009243D5 /* Resources */,
+				8B0DB8C5298A7A79003AD57C /* AppRegex.swift */,
 			);
 			path = PhoneKit;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				4ECF009A2366F33200AC6FC1 /* CountryViewController.swift in Sources */,
 				4E9221932689C7DC00163998 /* AlertView.swift in Sources */,
 				4EE40BCE247FB5B1009243D5 /* FrameWorkConstants.swift in Sources */,
+				8B0DB8C6298A7A79003AD57C /* AppRegex.swift in Sources */,
 				4ECF009D2366F33200AC6FC1 /* CountryTableViewCell.swift in Sources */,
 				4EE40BCC247FB567009243D5 /* PhoneKitEx.swift in Sources */,
 				4EE40BB7247FAC13009243D5 /* CountryCode.swift in Sources */,
